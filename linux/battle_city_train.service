@@ -1,0 +1,22 @@
+[Unit]
+Description=Battle City AI Training Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+# Adjust path to where you cloned the repo
+WorkingDirectory=/home/ubuntu/battle_city_ai_new
+Environment=PYTHONPATH=/home/ubuntu/battle_city_ai_new
+# Command to run (USING SYSTEM PYTHON)
+ExecStartPre=+/usr/bin/truncate -s 0 /var/log/battle_city_train.log
+ExecStart=/usr/bin/python3 -u -m python.train
+# Restart automatically if it crashes
+Restart=always
+RestartSec=10
+# Logging goes to journalctl (use: sudo journalctl -u battle_city_train -f)
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+nes-py
+stable-baselines3[extra]
+gym
+numpy
+opencv-python
+tensorboard
+shimmy>=1.0.0
+sb3-contrib

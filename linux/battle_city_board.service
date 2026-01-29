@@ -1,0 +1,15 @@
+[Unit]
+Description=Battle City AI TensorBoard
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/battle_city_ai_new
+# Command to run (USING SYSTEM PYTHON)
+ExecStart=/usr/bin/python3 -m tensorboard.main --logdir ./tensorboard_logs --port 6006 --host 0.0.0.0
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
