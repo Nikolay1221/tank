@@ -3,7 +3,7 @@ import os
 class RLConfig:
     # Environment settings
     GAME_PATH = os.path.abspath("BattleCity.nes")
-    SKIP_FRAMES = 4 # Standard for Atari/Visual (Capture motion)
+    SKIP_FRAMES = 2 # Reduced from 4 to 2 for better reaction time
     
     # Training settings
     # 60 FPS / 4 = 15 steps/sec. 
@@ -19,7 +19,7 @@ class RLConfig:
     TRAIN_SINGLE_LEVEL = 1   
     
     # Model settings
-    LEARNING_RATE = 2.5e-4 # Reduced 10x for Fine-Tuning (was 2.5e-4)
+    LEARNING_RATE = 2.5e-4 # Restored to 2.5e-4 (with n_epochs=2)
     ENTROPY_COEF = 0.01
     
     # N_STEPS: Standard PPO
@@ -30,7 +30,7 @@ class RLConfig:
     BATCH_SIZE = 4096
     
     # Display settings
-    HEADLESS = False  # На сервере ВСЕГДА True. Иначе крашнется.
+    HEADLESS = True  # На сервере или для скорости True.
     RENDER_RANK_0 = False # На сервере выключай, смотреть некому.
     
     # RAM Addresses (Тут все ок)

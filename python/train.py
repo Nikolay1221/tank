@@ -6,7 +6,7 @@ import torch as th
 import json  # For metrics persistence
 from typing import Callable
 from stable_baselines3 import PPO
-from stable_baselines3.common.vec_env import SubprocVecEnv, VecFrameStack, VecMonitor, DummyVecEnv
+from stable_baselines3.common.vec_env import SubprocVecEnv, VecFrameStack, VecMonitor, DummyVecEnv, VecNormalize
 from stable_baselines3.common.callbacks import BaseCallback
 from collections import deque
 from stable_baselines3.common.callbacks import CheckpointCallback
@@ -92,7 +92,7 @@ class LoggingCallback(BaseCallback):
                      kill_avg = np.mean(self.episode_kills) if self.episode_kills else 0
                      self.logger.record("custom/games_played", self.total_games)
                      self.logger.record("custom/avg_kills", kill_avg)
-                     print(f"[EPISODE END] Game #{self.total_games}, Avg Kills: {kill_avg:.2f}")
+                     print(f"[EPISODE END] Game #{self.total_games}, Kills: {info.get('kills', 0)}, Avg Kills: {kill_avg:.2f}")
         
         # PERIODIC LOG - every log_interval steps
         if self.step_count % self.log_interval == 0:
@@ -169,13 +169,20 @@ def main():
     # Even with LSTM, frame stacking is beneficial for immediate motion detection.
     vec_env = VecFrameStack(vec_env, n_stack=4)
     
+    # WRAPPER: Normalize Rewards (v.v. IMPORTANT for PPO)
+    # Scales large rewards (+100, +400) to standard Gaussian range approx [-1, 1].
+    # Keeps gamma=0.99 by default.
+    vec_env = VecNormalize(vec_env, norm_obs=False, norm_reward=True, clip_reward=10.0)
+    
     # Monitor (logs)
     vec_env = VecMonitor(vec_env, "logs/TestMonitor")
 
     # Policy Architecture: CnnPolicy
-    # Increasing capacity: 2x larger dense layers (1024) for Actor (pi) and Critic (vf)
+    # "The Monster Brain" - Massive Deep Funnel
+    # Input (3136) -> 2048 -> 1024 -> 512 -> 256 -> 128 -> 64 -> 32 -> 16 -> Heads
+    massive_arch = [2048, 1024, 512, 256, 128, 64, 32, 16]
     policy_kwargs = dict(
-        net_arch=dict(pi=[1024], vf=[1024])
+        net_arch=dict(pi=massive_arch, vf=massive_arch)
     )
     
     CHECKPOINT_DIR = './checkpoints/'
@@ -235,6 +242,7 @@ def main():
             learning_rate=RLConfig.LEARNING_RATE,  # Constant LR (no schedule)
             n_steps=RLConfig.N_STEPS,
             batch_size=RLConfig.BATCH_SIZE,
+            n_epochs=10, # User requested revert to 10 (Maximum learning per batch)
             ent_coef=RLConfig.ENTROPY_COEF,
             tensorboard_log="./tensorboard_logs/",
             policy_kwargs=policy_kwargs,

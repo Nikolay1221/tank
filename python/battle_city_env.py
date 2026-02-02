@@ -122,6 +122,7 @@ class BattleCityEnv(gym.Wrapper):
              
         # Reset trackers
         self.prev_kills = [0] * 4
+        self.death_count = 0
         # Initialize lives to ACTUAL value from RAM
         self.prev_lives = self.env.ram[0x51]
         
@@ -202,7 +203,7 @@ class BattleCityEnv(gym.Wrapper):
                  if base_status == 0:
                      done = True
                      info['base_destroyed'] = True
-                     visual_penalty = -20
+                     visual_penalty = -3 # Reduced from -20 by user request
         
         # Check for Lives (0x51)
         # If lives == 0, it means Game Over (or about to be)
@@ -234,12 +235,25 @@ class BattleCityEnv(gym.Wrapper):
         
         # Calculate kill reward
         kill_reward = 0
-        total_kills = sum(curr_kills)
+        # Cast to int to prevent numpy uint8 overflow
+        total_kills = int(sum(curr_kills))
+        total_prev_kills = int(sum(self.prev_kills))
         
-        for i in range(4):
-            if curr_kills[i] > self.prev_kills[i]:
-                # Small reward for each kill
-                kill_reward += 1
+        # Calculate new kills in this step
+        new_kills = total_kills - total_prev_kills
+        
+        if new_kills > 0:
+            for k in range(new_kills):
+                # Kill index in the current session (1-based)
+                kill_idx = total_prev_kills + k + 1
+                
+                # Base reward 5. Additional reward starts from 2nd kill.
+                # 1st kill: 5 + 0 = 5
+                # 2nd kill: 5 + 2 = 7
+                # 3rd kill: 5 + 3 = 8
+                # ...
+                bonus = kill_idx if kill_idx > 1 else 0
+                kill_reward += 5 + bonus
                 
         # HUGE BONUS for Level Completion (20 Kills)
         # Assuming typical level has 20 enemies.
@@ -250,9 +264,8 @@ class BattleCityEnv(gym.Wrapper):
         # Calculate death penalty
         death_penalty = 0
         if curr_lives < self.prev_lives:
-            # -10 was too high (Agent became scared/camping).
-            # -1 is balanced: 1 Kill (+1) justifies 1 Death (-1).
-            death_penalty = -1
+            self.death_count += 1
+            death_penalty = -self.death_count
             
         # EXPLORATION REWARD
         # Map is 192x192 pixels (from 24 to 216).
