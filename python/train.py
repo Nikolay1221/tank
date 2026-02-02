@@ -177,12 +177,11 @@ def main():
     # Monitor (logs)
     vec_env = VecMonitor(vec_env, "logs/TestMonitor")
 
-    # Policy Architecture: CnnPolicy
-    # "The Monster Brain" - Massive Deep Funnel
-    # Input (3136) -> 2048 -> 1024 -> 512 -> 256 -> 128 -> 64 -> 32 -> 16 -> Heads
-    massive_arch = [2048, 1024, 512, 256, 128, 64, 32, 16]
+    # Simplified Architecture (Standard Atari Nature CNN)
+    # Input (3136) -> 512 -> Heads
+    simple_arch = [512]
     policy_kwargs = dict(
-        net_arch=dict(pi=massive_arch, vf=massive_arch)
+        net_arch=dict(pi=simple_arch, vf=simple_arch)
     )
     
     CHECKPOINT_DIR = './checkpoints/'
@@ -242,7 +241,7 @@ def main():
             learning_rate=RLConfig.LEARNING_RATE,  # Constant LR (no schedule)
             n_steps=RLConfig.N_STEPS,
             batch_size=RLConfig.BATCH_SIZE,
-            n_epochs=10, # User requested revert to 10 (Maximum learning per batch)
+            n_epochs=10, # Increased to 10 for aggressive learning
             ent_coef=RLConfig.ENTROPY_COEF,
             tensorboard_log="./tensorboard_logs/",
             policy_kwargs=policy_kwargs,

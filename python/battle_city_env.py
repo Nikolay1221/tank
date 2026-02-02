@@ -203,7 +203,7 @@ class BattleCityEnv(gym.Wrapper):
                  if base_status == 0:
                      done = True
                      info['base_destroyed'] = True
-                     visual_penalty = -3 # Reduced from -20 by user request
+                     visual_penalty = -10 # Increased to -10 as requested
         
         # Check for Lives (0x51)
         # If lives == 0, it means Game Over (or about to be)
@@ -286,8 +286,7 @@ class BattleCityEnv(gym.Wrapper):
             
             if cell_id not in self.visited_cells:
                 self.visited_cells.add(cell_id)
-                # exploration_reward = 2.0 # REMOVED by user request
-                exploration_reward = 0
+                exploration_reward = 1.0 # Restored to 1.0 as requested
             
         # Total reward
         custom_reward = kill_reward + death_penalty + visual_penalty + exploration_reward

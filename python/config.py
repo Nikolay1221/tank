@@ -19,7 +19,7 @@ class RLConfig:
     TRAIN_SINGLE_LEVEL = 1   
     
     # Model settings
-    LEARNING_RATE = 2.5e-4 # Restored to 2.5e-4 (with n_epochs=2)
+    LEARNING_RATE = 1.0e-4 # Restored to 1.0e-4 as requested
     ENTROPY_COEF = 0.01
     
     # N_STEPS: Standard PPO
