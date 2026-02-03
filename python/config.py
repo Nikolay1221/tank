@@ -21,6 +21,7 @@ class RLConfig:
     # Model settings
     LEARNING_RATE = 1.0e-4 # Restored to 1.0e-4 as requested
     ENTROPY_COEF = 0.01
+    GAMMA = 0.999
     
     # N_STEPS: Standard PPO
     N_STEPS = 2048 
@@ -40,6 +41,11 @@ class RLConfig:
     ADDR_BASE = 0x68 # 0=Alive, Non-Zero=Destroyed (Hypothesis from Game Genie GXUTATSA)
     ADDR_PLAYER_X = 0x90
     ADDR_PLAYER_Y = 0x98
+    
+    # Enemy Tracking Addresses
+    ADDR_ENEMY_STATUS_BASE = 0xA0
+    ADDR_COORD_X_BASE = 0x90
+    ADDR_COORD_Y_BASE = 0x98
     
     @staticmethod
     def get_rom_path():

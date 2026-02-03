@@ -126,8 +126,18 @@ class BattleCityEnv(gym.Wrapper):
         # Initialize lives to ACTUAL value from RAM
         self.prev_lives = self.env.ram[0x51]
         
+        # Reset Proximity Reward Tracker
+        self.prev_min_dist = self._get_nearest_dist()
+        self.prev_px = self.env.ram[RLConfig.ADDR_PLAYER_X]
+        self.prev_py = self.env.ram[RLConfig.ADDR_PLAYER_Y]
+        
         # Exploration Tracker
         self.visited_cells = set()
+
+        # Proximity Reward Logic
+        self.prev_min_dist = 999.0
+        self.prev_px = 0
+        self.prev_py = 0
         
         # Base Latch: 
         # RAM[0x68] is 0 at boot, 80 when active, 0 when destroyed.
@@ -138,6 +148,39 @@ class BattleCityEnv(gym.Wrapper):
         self.game_over_template = None
             
         return self._get_obs(), {}
+
+    def _get_nearest_dist(self):
+        """Calculates distance to nearest active enemy."""
+        # Player coordinates (Center)
+        # RAM gives Top-Left. Sprite is 16x16. Center is +8.
+        px = float(self.env.ram[RLConfig.ADDR_PLAYER_X]) + 8.0
+        py = float(self.env.ram[RLConfig.ADDR_PLAYER_Y]) + 8.0
+        
+        min_dist = 999.0
+        found = False
+
+        # Iterate Enemy Slots 2 to 7
+        for i in range(2, 8):
+            # Check Status (Alive >= 128)
+            status = self.env.ram[RLConfig.ADDR_ENEMY_STATUS_BASE + i]
+            if status < 128:
+                continue
+            
+            # Enemy Coordinates
+            ex = float(self.env.ram[RLConfig.ADDR_COORD_X_BASE + i]) + 8.0
+            ey = float(self.env.ram[RLConfig.ADDR_COORD_Y_BASE + i]) + 8.0
+            
+            # Simple 0,0 check (sometimes happens during init)
+            if self.env.ram[RLConfig.ADDR_COORD_X_BASE + i] == 0 and self.env.ram[RLConfig.ADDR_COORD_Y_BASE + i] == 0:
+                continue
+            
+            # Euclidian Distance
+            d = np.sqrt((ex - px)**2 + (ey - py)**2)
+            if d < min_dist:
+                min_dist = d
+                found = True
+                
+        return min_dist if found else 999.0
 
     def _check_game_over(self):
         if self.game_over_template is None:
@@ -286,10 +329,44 @@ class BattleCityEnv(gym.Wrapper):
             
             if cell_id not in self.visited_cells:
                 self.visited_cells.add(cell_id)
-                exploration_reward = 1.0 # Restored to 1.0 as requested
+                exploration_reward = 0.0 # Disabled as requested (was 1.0)
+        
+        # PROXIMITY REWARD (Approaching Enemies)
+        proximity_reward = 0.0
+        
+        # Current Player Position
+        curr_px = self.env.ram[RLConfig.ADDR_PLAYER_X]
+        curr_py = self.env.ram[RLConfig.ADDR_PLAYER_Y]
+        
+        # Check if player moved (Anti-Camping)
+        # We only reward proximity if the player is actively moving.
+        player_moved = (curr_px != self.prev_px) or (curr_py != self.prev_py)
+        
+        # 1. Get current distance
+        curr_dist = self._get_nearest_dist()
+        
+        # 2. Validation
+        if curr_dist != 999.0 and self.prev_min_dist != 999.0:
+            # 3. Calculate Difference
+            # Positive diff = We got closer (Good)
+            diff = self.prev_min_dist - curr_dist
+            
+            # 4. Filters for Teleportation / Respawn
+            if abs(diff) <= 50.0:
+                 # Anti-Camping Logic:
+                 if player_moved:
+                     proximity_reward = diff * 2.0 # Increased from 0.5 to 2.0 ("Fat" reward)
+                 else:
+                     # If not moved, reward is 0 (ignore enemy approach or retreat)
+                     proximity_reward = 0.0
+        
+        # 5. Update state
+        self.prev_min_dist = curr_dist
+        self.prev_px = curr_px
+        self.prev_py = curr_py
             
         # Total reward
-        custom_reward = kill_reward + death_penalty + visual_penalty + exploration_reward
+        custom_reward = kill_reward + death_penalty + visual_penalty + exploration_reward + proximity_reward
         
         # Update trackers
         self.prev_kills = curr_kills
@@ -298,7 +375,9 @@ class BattleCityEnv(gym.Wrapper):
         # Info for debugging
         info['kills'] = sum(curr_kills)
         info['lives'] = curr_lives
+        info['lives'] = curr_lives
         info['exploration'] = len(self.visited_cells)
+        info['proximity_reward'] = proximity_reward
         
         truncated = False
         
