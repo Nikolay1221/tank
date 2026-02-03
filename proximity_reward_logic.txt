@@ -1,0 +1,136 @@
+Battle City (NES) - Proximity Reward Logic Specification
+======================================================
+This document describes how to implement a "Proximity Reward" (reward for approaching enemies) using direct RAM access, suitable for any Reinforcement Learning project interacting with Battle City.
+
+1. RAM Memory Map (Addresses)
+-----------------------------
+To calculate distances, we read coordinates directly from the NES RAM.
+Arrays start at 0x90 (X) and 0x98 (Y).
+
+| Object            | Index (Slot) | X Coord Addr | Y Coord Addr | Status Addr |
+|-------------------|--------------|--------------|--------------|-------------|
+| Player 1 (Agent)  | 0            | 0x90         | 0x98         | -           |
+| Enemy 1           | 2            | 0x92         | 0x9A         | 0xA2        |
+| Enemy 2           | 3            | 0x93         | 0x9B         | 0xA3        |
+| Enemy 3           | 4            | 0x94         | 0x9C         | 0xA4        |
+| Enemy 4           | 5            | 0x95         | 0x9D         | 0xA5        |
+| Enemy 5           | 6            | 0x96         | 0x9E         | 0xA6        |
+| Enemy 6           | 7            | 0x97         | 0x9F         | 0xA7        |
+
+*Note: Slot 1 is reserved for Player 2 (if present).*
+
+2. Enemy Status Check
+---------------------
+Before using an enemy's coordinates, you MUST check if they are alive/active.
+- Read byte at Status Address (0xA0 + Slot Index).
+- **Condition:** Value >= 128 (0x80).
+- If Value < 128: The enemy is dead, spawning, or slot is empty. Ignore it.
+
+3. Logic & Formula
+------------------
+We use "Potential-Based Reward Shaping".
+The reward is the CHANGE in distance to the cloest enemy between steps.
+
+State Variables:
+- `prev_min_dist`: Float, stores the distance to the nearest enemy from the previous frame.
+
+Step Logic:
+1. **Get Player Pos:** P(x,y) from 0x90, 0x98.
+2. **Find Nearest Enemy:**
+   - Iterate slots 2 to 7.
+   - If Status >= 128:
+     - Get E(x,y).
+     - Calculate Distance D = sqrt((Ex - Px)^2 + (Ey - Py)^2).
+   - `current_min_dist` = Min(D) of all active enemies.
+   - If no enemies active: `current_min_dist` = `prev_min_dist` (to result in 0 reward).
+3. **Calculate Reward:**
+   - `diff = prev_min_dist - current_min_dist`
+   - `Reward = diff * Scale` (Recommended Scale: 0.1 to 0.5).
+   - If `diff` is positive -> We got closer (Good!).
+   - If `diff` is negative -> We moved away (Bad).
+4. **Handle Kills (Teleportation Fix):**
+   - If an enemy dies, the "nearest" might suddenly switch to a far-away enemy.
+   - This causes a huge negative spike (e.g. dist jumps from 10 to 100 -> diff is -90).
+   - **Fix:** If `diff < -50.0` (arbitrary threshold), force Reward = 0.
+5. **Update State:**
+   - `prev_min_dist = current_min_dist`
+
+4. Python Implementation Reference
+----------------------------------
+
+```python
+import numpy as np
+
+class BattleCityProximityReward:
+    def __init__(self, scale=0.5):
+        self.scale = scale
+        self.prev_min_dist = 999.0
+
+    def reset(self, ram):
+        """Call this on env.reset()"""
+        self.prev_min_dist = self._get_nearest_dist(ram)
+
+    def compute_reward(self, ram):
+        """Call this on env.step()"""
+        # 1. Get Player Coords
+        # Safety: Check if Player is at 0,0 (Dead/Respawning)
+        raw_px = float(ram[0x90])
+        raw_py = float(ram[0x98])
+        if raw_px == 0 and raw_py == 0:
+            return 0.0
+
+        # 2. Get current distance
+        curr_dist = self._get_nearest_dist(ram)
+
+        # 3. Validation
+        if curr_dist == 999.0:
+            self.prev_min_dist = 999.0 
+            return 0.0
+
+        # 4. Calculate Difference
+        diff = self.prev_min_dist - curr_dist
+        
+        # 5. Filters for Teleportation / Respawn
+        # Case A: Enemy died/spawned far away (Diff is large negative)
+        # Case B: Player died and respawned at base (Diff is large positive or negative)
+        # We use a threshold of 50.0 pixels.
+        if abs(diff) > 50.0:
+            reward = 0.0
+        else:
+            reward = diff * self.scale
+
+        # 6. Update state
+        self.prev_min_dist = curr_dist
+        
+        return reward
+
+    def _get_nearest_dist(self, ram):
+        # We add +8 to get the CENTER of the 16x16 sprite
+        # RAM gives the Top-Left corner.
+        px = float(ram[0x90]) + 8.0
+        py = float(ram[0x98]) + 8.0
+        
+        min_dist = 999.0
+        found = False
+
+        # Loop Enemy Slots 2-7
+        for i in range(2, 8):
+            # Check Status (Alive >= 128)
+            status = ram[0xA0 + i]
+            if status < 128: continue
+            
+            ex = float(ram[0x90 + i]) + 8.0
+            ey = float(ram[0x98 + i]) + 8.0
+            
+            # Simple 0,0 check (sometimes happens during init)
+            # Checking raw RAM values before offset is safer, but checking resulting center also works
+            if ram[0x90 + i] == 0 and ram[0x98 + i] == 0: continue
+            
+            # Distance
+            d = np.sqrt((ex - px)**2 + (ey - py)**2)
+            if d < min_dist:
+                min_dist = d
+                found = True
+                
+        return min_dist if found else 999.0
+```

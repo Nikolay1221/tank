@@ -171,8 +171,7 @@ def main():
     
     # WRAPPER: Normalize Rewards (v.v. IMPORTANT for PPO)
     # Scales large rewards (+100, +400) to standard Gaussian range approx [-1, 1].
-    # Keeps gamma=0.99 by default.
-    vec_env = VecNormalize(vec_env, norm_obs=False, norm_reward=True, clip_reward=10.0)
+    vec_env = VecNormalize(vec_env, norm_obs=False, norm_reward=True, clip_reward=10.0, gamma=RLConfig.GAMMA)
     
     # Monitor (logs)
     vec_env = VecMonitor(vec_env, "logs/TestMonitor")
@@ -213,7 +212,7 @@ def main():
                 latest_checkpoint, 
                 env=vec_env,
                 verbose=1,
-                # NO explicit params = use everything from checkpoint as-is
+                gamma=RLConfig.GAMMA,
                 tensorboard_log="./tensorboard_logs/",
                 device="cuda"
             )
@@ -242,6 +241,7 @@ def main():
             n_steps=RLConfig.N_STEPS,
             batch_size=RLConfig.BATCH_SIZE,
             n_epochs=10, # Increased to 10 for aggressive learning
+            gamma=RLConfig.GAMMA,
             ent_coef=RLConfig.ENTROPY_COEF,
             tensorboard_log="./tensorboard_logs/",
             policy_kwargs=policy_kwargs,
