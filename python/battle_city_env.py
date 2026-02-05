@@ -355,7 +355,7 @@ class BattleCityEnv(gym.Wrapper):
             if abs(diff) <= 50.0:
                  # Anti-Camping Logic:
                  if player_moved:
-                     proximity_reward = diff * 2.0 # Increased from 0.5 to 2.0 ("Fat" reward)
+                     proximity_reward = diff * 0.5 # Reduced from 2.0 to 0.5
                  else:
                      # If not moved, reward is 0 (ignore enemy approach or retreat)
                      proximity_reward = 0.0

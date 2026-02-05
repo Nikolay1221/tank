@@ -178,7 +178,7 @@ def main():
 
     # Simplified Architecture (Standard Atari Nature CNN)
     # Input (3136) -> 512 -> Heads
-    simple_arch = [512]
+    simple_arch = [512, 512]
     policy_kwargs = dict(
         net_arch=dict(pi=simple_arch, vf=simple_arch)
     )

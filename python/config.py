@@ -20,7 +20,7 @@ class RLConfig:
     
     # Model settings
     LEARNING_RATE = 1.0e-4 # Restored to 1.0e-4 as requested
-    ENTROPY_COEF = 0.01
+    ENTROPY_COEF = 0.06
     GAMMA = 0.999
     
     # N_STEPS: Standard PPO
