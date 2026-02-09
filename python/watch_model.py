@@ -9,90 +9,93 @@ from python.config import RLConfig
 from python.battle_city_env import BattleCityEnv
 
 def main():
-    print("Searching for latest checkpoint...")
+    print("Searching for model...")
     checkpoint_dir = "./checkpoints/"
+    final_model = "battle_city_ppo_final.zip"
     
-    # Check if dir exists
-    if not os.path.exists(checkpoint_dir):
-        print(f"Directory {checkpoint_dir} not found!")
-        return
+    model_path = None
 
-    # Find all zip files
-    files = [f for f in os.listdir(checkpoint_dir) if f.startswith('battle_city_ppo') and f.endswith('.zip')]
-    if not files:
-        print("No checkpoints found!")
-        return
+    # 1. Try final model in root
+    if os.path.exists(final_model):
+        print(f"Found FINAL model: {final_model}")
+        model_path = final_model
+    else:
+        # 2. Try latest checkpoint
+        if not os.path.exists(checkpoint_dir):
+            print(f"Directory {checkpoint_dir} not found!")
+            return
 
-    # Sort by step count (extract number from battle_city_ppo_XXXXXX_steps.zip)
-    def get_steps(filename):
-        try:
-            return int(filename.split('_')[-2])
-        except:
-            return 0
-    
-    latest_file = max(files, key=get_steps)
-    print(f"Loading Model: {latest_file}...")
+        # Find all zip files
+        files = [f for f in os.listdir(checkpoint_dir) if f.startswith('battle_city_ppo') and f.endswith('.zip')]
+        if not files:
+            print("No checkpoints found!")
+            return
+
+        # Sort by modification time to get the ABSOLUTE LATEST one regardless of step count in name
+        files.sort(key=lambda x: os.path.getmtime(os.path.join(checkpoint_dir, x)), reverse=True)
+        
+        latest_file = files[0]
+        print(f"Loading LATEST checkpoint (by time): {latest_file}...")
+        model_path = os.path.join(checkpoint_dir, latest_file)
     
     # Create Env
-    # Use DummyVecEnv for single-threaded viewing
-    # MUST use 'rgb_array' so automatic render() returns the frame we can show
-    env = DummyVecEnv([lambda: BattleCityEnv(render_mode='rgb_array', start_level=2)])
+    env = DummyVecEnv([lambda: BattleCityEnv(render_mode='rgb_array', start_level=1)])
     
     # WRAPPER: Frame Stacking (Match Training!)
     env = VecFrameStack(env, n_stack=4)
     
     # Load Model (PPO)
-    model = PPO.load(os.path.join(checkpoint_dir, latest_file), device="cpu")
+    print(f"Loading weights from {model_path}...")
+    model = PPO.load(model_path, device="cpu")
     
     print("\n--- STARTING PLAYBACK ---")
-    print("Mode: STOCHASTIC (Randomness Enabled)")
-    print("Matches Training Behavior")
+    print("Mode: STOCHASTIC")
+    print("Press 'S' to toggle Deterministic mode (currently OFF)")
     print("-------------------------")
     
     obs = env.reset()
+    deterministic = False
     
     try:
         while True:
             # Predict action
-            # PPO is stateless (no LSTM state)
             action, _ = model.predict(
                 obs, 
-                deterministic=True
+                deterministic=deterministic
             )
             
             # Step
             obs, rewards, dones, infos = env.step(action)
             
-            # Render Window
-            # Env is wrapped in VecFrameStack -> DummyVecEnv
-            # But render() calls the base envs.
-            
-            # Get original env to render
-            # raw_env = env.envs[0] # This worked for DummyVecEnv
-            # But VecFrameStack wraps it. 
-            # We can just call env.render()? SB3 VecEnv render might differ.
-            # Best to access the underlying env.
-            
-            frame = env.render(mode='rgb_array') # VecFrameStack usually passes this down
+            frame = env.render(mode='rgb_array') 
             
             if frame is not None:
-                # If frame is a list (from VecEnv), take first
                 if isinstance(frame, list): frame = frame[0]
-                # If frame is (1, H, W, C) or (H, W, C)
                 if len(frame.shape) == 4: frame = frame[0]
                 
                 frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
                 frame = cv2.resize(frame, (512, 480), interpolation=cv2.INTER_NEAREST)
+                
+                # Add overlay text
+                mode_text = "DETERMINISTIC" if deterministic else "STOCHASTIC"
+                cv2.putText(frame, f"Mode: {mode_text} (Press S to toggle)", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+                
                 cv2.imshow("Battle City AI - Watch Mode", frame)
-                cv2.waitKey(20) # ~ 50 FPS
+                key = cv2.waitKey(15) & 0xFF
+                if key == ord('s'):
+                    deterministic = not deterministic
+                    print(f"Switched to {'DETERMINISTIC' if deterministic else 'STOCHASTIC'} mode")
+                elif key == ord('q'):
+                    break
             
             if dones[0]:
-                print(f"Episode Done. Reward: {infos[0].get('episode', {}).get('r', 'N/A')}")
+                print(f"Episode Done. Kills: {infos[0].get('kills', 0)}")
                 # Obs is automatically reset
                 
     except KeyboardInterrupt:
         print("Stopping...")
     finally:
+        cv2.destroyAllWindows()
         env.close()
 
 if __name__ == "__main__":

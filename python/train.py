@@ -38,7 +38,7 @@ def linear_schedule(initial_value: float) -> Callable[[float], float]:
     return func
 
 class LoggingCallback(BaseCallback):
-    def __init__(self, verbose=0, log_interval=1000, save_interval=10000):
+    def __init__(self, verbose=0, log_interval=RLConfig.LOG_INTERVAL, save_interval=RLConfig.SAVE_FREQ):
         super().__init__(verbose)
         self.episode_rewards = deque(maxlen=100)
         self.episode_kills = deque(maxlen=100)
@@ -169,18 +169,13 @@ def main():
     # Even with LSTM, frame stacking is beneficial for immediate motion detection.
     vec_env = VecFrameStack(vec_env, n_stack=4)
     
-    # WRAPPER: Normalize Rewards (v.v. IMPORTANT for PPO)
-    # Scales large rewards (+100, +400) to standard Gaussian range approx [-1, 1].
-    vec_env = VecNormalize(vec_env, norm_obs=False, norm_reward=True, clip_reward=10.0, gamma=RLConfig.GAMMA)
-    
     # Monitor (logs)
     vec_env = VecMonitor(vec_env, "logs/TestMonitor")
 
     # Simplified Architecture (Standard Atari Nature CNN)
-    # Input (3136) -> 512 -> Heads
-    simple_arch = [512, 512]
+    # Post-CNN Layers: 512 -> 512 -> 512
     policy_kwargs = dict(
-        net_arch=dict(pi=simple_arch, vf=simple_arch)
+        net_arch=dict(pi=RLConfig.HIDDEN_LAYERS, vf=RLConfig.HIDDEN_LAYERS)
     )
     
     CHECKPOINT_DIR = './checkpoints/'
@@ -212,7 +207,12 @@ def main():
                 latest_checkpoint, 
                 env=vec_env,
                 verbose=1,
+                learning_rate=RLConfig.LEARNING_RATE,
                 gamma=RLConfig.GAMMA,
+                gae_lambda=RLConfig.GAE_LAMBDA,
+                clip_range=RLConfig.CLIP_RANGE,
+                vf_coef=RLConfig.VF_COEF,
+                max_grad_norm=RLConfig.MAX_GRAD_NORM,
                 tensorboard_log="./tensorboard_logs/",
                 device="cuda"
             )
@@ -237,11 +237,15 @@ def main():
             "CnnPolicy",
             vec_env,
             verbose=1,
-            learning_rate=RLConfig.LEARNING_RATE,  # Constant LR (no schedule)
+            learning_rate=RLConfig.LEARNING_RATE,
             n_steps=RLConfig.N_STEPS,
             batch_size=RLConfig.BATCH_SIZE,
-            n_epochs=10, # Increased to 10 for aggressive learning
+            n_epochs=RLConfig.N_EPOCHS,
             gamma=RLConfig.GAMMA,
+            gae_lambda=RLConfig.GAE_LAMBDA,
+            clip_range=RLConfig.CLIP_RANGE,
+            vf_coef=RLConfig.VF_COEF,
+            max_grad_norm=RLConfig.MAX_GRAD_NORM,
             ent_coef=RLConfig.ENTROPY_COEF,
             tensorboard_log="./tensorboard_logs/",
             policy_kwargs=policy_kwargs,
@@ -250,12 +254,12 @@ def main():
 
     # Checkpoints
     checkpoint_callback = CheckpointCallback(
-        save_freq=10000, 
+        save_freq=RLConfig.SAVE_FREQ, 
         save_path='./checkpoints/',
         name_prefix='battle_city_ppo' # Keep same prefix? Or change to battle_city_lstm? Keeping same allows mixup but clearer history.
     )
     
-    logging_callback = LoggingCallback(verbose=1, save_interval=10000)
+    logging_callback = LoggingCallback(verbose=1)
     
     # LOAD METRICS if resuming
     is_resuming = latest_checkpoint is not None and model is not None # Only load if model loaded successfully

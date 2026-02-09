@@ -1,48 +1,43 @@
 import os
 
 class RLConfig:
-    # Environment settings
     GAME_PATH = os.path.abspath("BattleCity.nes")
-    SKIP_FRAMES = 2 # Reduced from 4 to 2 for better reaction time
+    SKIP_FRAMES = 2
     
-    # Training settings
-    # 60 FPS / 4 = 15 steps/sec. 
-    # 10M frames / 4 = 2.5M steps.
     TOTAL_TIMESTEPS = 240000000  
-    
-    # Multiprocessing: 70 environments (2 per level) for server
-    # 35 Levels * 2 Agents = 70 Envs
-    N_ENVS = 8
-    
-    # Level Selection
-    # Valid values: 1-35 (Train on specific level) or None (Train on all levels)
+    N_ENVS = 16
     TRAIN_SINGLE_LEVEL = 1   
     
-    # Model settings
-    LEARNING_RATE = 1.0e-4 # Restored to 1.0e-4 as requested
-    ENTROPY_COEF = 0.06
-    GAMMA = 0.999
+    # Снижаем LR для стабильности гигантской сети
+    LEARNING_RATE = 1.0e-4 
+    ENTROPY_COEF = 0.01
+    GAMMA = 0.99
+    GAE_LAMBDA = 0.90
+    CLIP_RANGE = 0.2
+    VF_COEF = 0.5
+    MAX_GRAD_NORM = 0.5
     
-    # N_STEPS: Standard PPO
-    N_STEPS = 2048 
+    # Ультра-частые обновления (как просил)
+    N_STEPS = 512 
+    BATCH_SIZE = 512
+    N_EPOCHS = 15
     
-  
-    # Tesla T4 переварит это мгновенно. 
-    BATCH_SIZE = 4096
+    # Гигантская и глубокая сеть (3 слоя по 2048 нейронов)
+    HIDDEN_LAYERS = [2048, 2048, 2048]
     
-    # Display settings
-    HEADLESS = True  # На сервере или для скорости True.
-    RENDER_RANK_0 = False # На сервере выключай, смотреть некому.
+    SAVE_FREQ = 10000
+    LOG_INTERVAL = 1000
     
-    # RAM Addresses (Тут все ок)
+    HEADLESS = False
+    RENDER_RANK_0 = False
+    
     ADDR_KILLS = [0x73, 0x74, 0x75, 0x76]
     ADDR_LIVES = 0x51
     ADDR_STAGE = 0x85
-    ADDR_BASE = 0x68 # 0=Alive, Non-Zero=Destroyed (Hypothesis from Game Genie GXUTATSA)
+    ADDR_BASE = 0x68
     ADDR_PLAYER_X = 0x90
     ADDR_PLAYER_Y = 0x98
     
-    # Enemy Tracking Addresses
     ADDR_ENEMY_STATUS_BASE = 0xA0
     ADDR_COORD_X_BASE = 0x90
     ADDR_COORD_Y_BASE = 0x98

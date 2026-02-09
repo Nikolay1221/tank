@@ -60,7 +60,8 @@ class BattleCityEnv(gym.Wrapper):
         gray = cv2.cvtColor(screen, cv2.COLOR_RGB2GRAY)
         
         # Resize to 84x84 (Standard Nature CNN input)
-        resized = cv2.resize(gray, (84, 84), interpolation=cv2.INTER_AREA)
+        # Using INTER_LINEAR to preserve small details like bullets
+        resized = cv2.resize(gray, (84, 84), interpolation=cv2.INTER_LINEAR)
         
         # Add channel dimension (84, 84, 1)
         return np.expand_dims(resized, axis=-1)
@@ -255,22 +256,7 @@ class BattleCityEnv(gym.Wrapper):
             if curr_lives == 0:
                 done = True
                 info['game_over'] = True
-                info['game_over'] = True
                 visual_penalty = -20 # Penalty for losing all lives (Same as Base Destruction)
-        
-        # Check for Level Completion / Stage Change
-        # If we are enforcing a specific level, we must NOT allow the game to proceed to the next stage.
-        # If the stage in RAM changes, it means the current level was beaten.
-        if self.start_level is not None:
-             current_stage_ram = self.env.ram[RLConfig.ADDR_STAGE]
-             # Assuming start_level is 1-based, RAM is usually 0-based or 1-based.
-             # We injected (start_level).
-             # If it changes, end the episode.
-             if current_stage_ram != self.start_level:
-                 done = True
-                 info['is_success'] = True
-                 # Optional: Large reward for clearing level?
-                 # custom_reward += 50 
         
         # Custom Reward Logic
         curr_kills = [self.env.ram[addr] for addr in RLConfig.ADDR_KILLS]
@@ -278,31 +264,23 @@ class BattleCityEnv(gym.Wrapper):
         
         # Calculate kill reward
         kill_reward = 0
-        # Cast to int to prevent numpy uint8 overflow
         total_kills = int(sum(curr_kills))
         total_prev_kills = int(sum(self.prev_kills))
-        
-        # Calculate new kills in this step
         new_kills = total_kills - total_prev_kills
         
         if new_kills > 0:
             for k in range(new_kills):
-                # Kill index in the current session (1-based)
                 kill_idx = total_prev_kills + k + 1
-                
-                # Base reward 5. Additional reward starts from 2nd kill.
-                # 1st kill: 5 + 0 = 5
-                # 2nd kill: 5 + 2 = 7
-                # 3rd kill: 5 + 3 = 8
-                # ...
-                bonus = kill_idx if kill_idx > 1 else 0
-                kill_reward += 5 + bonus
-                
+                # Super Aggressive Exponential growth
+                step_reward = 5.0 * (1.5 ** (kill_idx - 1))
+                kill_reward += step_reward
+
         # HUGE BONUS for Level Completion (20 Kills)
-        # Assuming typical level has 20 enemies.
-        if total_kills >= 20 and sum(self.prev_kills) < 20:
+        # If the player reaches 20 kills, the level is considered won.
+        if not done and total_kills >= 20 and sum(self.prev_kills) < 20:
+             done = True
              info['is_success'] = True
-             kill_reward += 100 # JACKPOT
+             kill_reward += 1000 # JACKPOT reward for 20 kills
         
         # Calculate death penalty
         death_penalty = 0
