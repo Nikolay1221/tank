@@ -23,12 +23,12 @@ class RLConfig:
     N_EPOCHS = 15
     
     # Гигантская и глубокая сеть (3 слоя по 2048 нейронов)
-    HIDDEN_LAYERS = [2048, 2048, 2048]
+    HIDDEN_LAYERS = [512, 512]
     
     SAVE_FREQ = 10000
     LOG_INTERVAL = 1000
     
-    HEADLESS = False
+    HEADLESS = True
     RENDER_RANK_0 = False
     
     ADDR_KILLS = [0x73, 0x74, 0x75, 0x76]

@@ -49,18 +49,22 @@ class BattleCityEnv(gym.Wrapper):
         
         # Trackers
         self.prev_kills = [0] * 4
+        self.cumulative_kills = 0
         self.prev_lives = 0
         
     def _get_obs(self):
-        """Returns the current screen, grayscale, resized to 84x84."""
+        """Returns the current screen, cropped to playfield, grayscale, resized to 84x84."""
         # Get raw screen from nes_py (240, 256, 3)
         screen = self.env.screen.copy()
         
+        # Crop to playfield only (remove right sidebar + borders)
+        # Playfield: 13x13 tiles × 16px = 208x208, starts at ~(16, 8)
+        cropped = screen[16:224, 16:224]  # (208, 208, 3)
+        
         # Convert to Grayscale
-        gray = cv2.cvtColor(screen, cv2.COLOR_RGB2GRAY)
+        gray = cv2.cvtColor(cropped, cv2.COLOR_RGB2GRAY)
         
         # Resize to 84x84 (Standard Nature CNN input)
-        # Using INTER_LINEAR to preserve small details like bullets
         resized = cv2.resize(gray, (84, 84), interpolation=cv2.INTER_LINEAR)
         
         # Add channel dimension (84, 84, 1)
@@ -122,7 +126,9 @@ class BattleCityEnv(gym.Wrapper):
         for _ in range(60): self.env.env.step(0)
              
         # Reset trackers
-        self.prev_kills = [0] * 4
+        # Snapshot RAM kills after boot — treats any residual values as baseline (not new kills)
+        self.prev_kills = [int(self.env.ram[addr]) for addr in RLConfig.ADDR_KILLS]
+        self.cumulative_kills = 0
         self.death_count = 0
         # Initialize lives to ACTUAL value from RAM
         self.prev_lives = self.env.ram[0x51]
@@ -262,22 +268,33 @@ class BattleCityEnv(gym.Wrapper):
         curr_kills = [self.env.ram[addr] for addr in RLConfig.ADDR_KILLS]
         curr_lives = self.env.ram[RLConfig.ADDR_LIVES]
         
-        # Calculate kill reward
+        # Calculate kill reward (cumulative, survives RAM resets between levels)
         kill_reward = 0
-        total_kills = int(sum(curr_kills))
-        total_prev_kills = int(sum(self.prev_kills))
-        new_kills = total_kills - total_prev_kills
+        total_kills_ram = int(sum(curr_kills))
+        total_prev_kills_ram = int(sum(self.prev_kills))
+        
+        # Detect new kills this frame
+        if total_kills_ram > total_prev_kills_ram:
+            # Normal case: RAM increased
+            new_kills = total_kills_ram - total_prev_kills_ram
+        elif total_kills_ram > 0 and total_kills_ram < total_prev_kills_ram:
+            # RAM reset (level changed), all current RAM kills are new
+            new_kills = total_kills_ram
+        else:
+            new_kills = 0
+        
+        # Accumulate
+        self.cumulative_kills += new_kills
         
         if new_kills > 0:
             for k in range(new_kills):
-                kill_idx = total_prev_kills + k + 1
+                kill_idx = self.cumulative_kills - new_kills + k + 1
                 # Super Aggressive Exponential growth
                 step_reward = 5.0 * (1.5 ** (kill_idx - 1))
                 kill_reward += step_reward
 
         # HUGE BONUS for Level Completion (20 Kills)
-        # If the player reaches 20 kills, the level is considered won.
-        if not done and total_kills >= 20 and sum(self.prev_kills) < 20:
+        if not done and self.cumulative_kills >= 20 and (self.cumulative_kills - new_kills) < 20:
              done = True
              info['is_success'] = True
              kill_reward += 1000 # JACKPOT reward for 20 kills
@@ -351,7 +368,7 @@ class BattleCityEnv(gym.Wrapper):
         self.prev_lives = curr_lives
         
         # Info for debugging
-        info['kills'] = sum(curr_kills)
+        info['kills'] = self.cumulative_kills
         info['lives'] = curr_lives
         info['lives'] = curr_lives
         info['exploration'] = len(self.visited_cells)
