@@ -1,0 +1,1019 @@
+﻿RAM size: 2048
+
+=== RAM dump (hex), non-zero regions ===
+  $0000: 00 3F 00 00 02 1C 00 00 00 00 04 FC 00 04 04 EB 22 F0 DB 5D 06 00 00 00 00 00 00 00 FF 00 00 00
+  $0020: 00 00 00 00 FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 FF 00 00 02
+  $0040: 00 00 00 00 FF 00 00 8F 10 00 00 00 01 FF 00 00 00 03 00 9A 8F 18 8F 18 08 00 08 FF 00 9C 56 04
+  $0060: 00 00 00 00 00 04 00 00 80 00 02 00 05 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 12
+  $0080: 14 00 66 00 BA 01 00 00 00 00 00 10 02 00 00 00 58 00 00 00 D8 8F 00 00 D8 00 00 00 26 18 00 00
+  $00A0: 88 00 00 00 A2 A3 00 00 00 00 00 00 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 D8 78 00 00
+  $00C0: 00 00 00 00 00 00 5A 42 00 00 00 00 00 00 00 00 42 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  $00E0: 4A 00 00 00 7A 50 00 00 C3 00 00 00 80 40 00 00 FC 03 82 EE 1C 1C 00 00 00 00 01 00 00 03 14 00
+  $0100: 00 00 00 00 00 00 F0 00 00 00 00 00 00 00 00 00 52 59 4F 55 49 54 49 20 4F 4F 4B 55 42 4F 20 20
+  $0160: 00 00 00 00 00 00 00 00 00 00 00 00 01 01 01 01 0A 01 10 00 0B 3B D4 E4 00 07 FC E4 FA D8 FB C1
+  $0180: 22 5D 14 FF 22 5E 70 FF 00 5B 00 FF 20 7A 00 FF 20 7B 00 FF 21 9D 11 FF 22 5D 14 FF 22 5E 70 FF
+  $01A0: 00 6A FF 21 3D 6A 6A FF 21 1D 6A 6A FF 20 FD 6A 6A FF 20 DD 6A 6A FF 20 BD 6A 6A FF 20 9D 6A 6A
+  $01C0: FF 20 7D 6A 6A FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  $0200: F0 00 00 50 F0 B5 02 D3 F0 00 00 50 F0 02 00 58 F0 90 02 D0 F0 92 02 D8 F0 9C 02 86 F0 9E 02 8E
+  $0220: F0 98 02 79 F0 9A 02 81 F0 82 02 78 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00
+  $0240: F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00
+  $0260: F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00
+  $0280: F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00
+  $02A0: F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00
+  $02C0: F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00 F0 00 00 00
+  $02E0: F0 82 02 78 F0 9E 02 82 F0 9C 02 7A F0 9A 02 8F F0 98 02 87 F0 92 02 D8 F0 90 02 D0 F0 02 00 58
+  $0300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00
+  $0320: 00 00 00 00 00 81 7F 6A 40 26 18 00 00 10 7F 1D 09 2A 18 00 00 81 7F 53 41 2A 18 00 00 00 00 00
+  $03A0: 00 00 00 00 00 00 00 00 00 00 00 00 06 8C 94 14 47 06 04 02 00 00 00 00 00 00 00 00 00 00 00 00
+  $0400: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11
+  $0420: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11
+  $0440: 11 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11 11 11 11
+  $0460: 11 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11 6A 6A 11
+  $0480: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $04A0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $04C0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $04E0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $0500: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 10 10 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $0520: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 10 10 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $0540: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $0560: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11
+  $0580: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11
+  $05A0: 11 11 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00 00 00 00 00 11 11 11 11
+  $05C0: 11 11 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00 00 00 00 00 11 11 11 11
+  $05E0: 11 11 0F 0F 00 00 0F 0F 0F 0F 00 00 00 00 00 00 00 00 00 00 0F 0F 0F 0F 00 00 0F 0F 11 11 11 11
+  $0600: 11 11 10 10 00 00 0F 0F 0F 0F 00 00 00 00 00 00 00 00 00 00 0F 0F 0F 0F 00 00 10 10 11 11 11 11
+  $0620: 11 11 20 20 00 00 00 00 00 00 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00 00 00 20 20 11 58 13 11
+  $0640: 11 11 00 00 00 00 00 00 00 00 00 00 0F 0F 0F 0F 0F 0F 00 00 00 00 00 00 00 00 00 00 11 14 11 11
+  $0660: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 0F 0F 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11
+  $0680: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11
+  $06A0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11
+  $06C0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11
+  $06E0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 6C FC 11
+  $0700: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 6D FD 11
+  $0720: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 0F 0F 0F 0F 00 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11
+  $0740: 11 11 00 00 00 00 00 00 00 00 00 00 00 0F C8 CA 0F 00 00 00 00 00 00 00 00 00 00 00 11 11 11 11
+  $0760: 11 11 00 00 00 00 00 00 00 00 00 00 00 0F C9 CB 0F 00 00 00 00 00 00 00 00 00 00 00 11 11 11 11
+  $0780: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11
+  $07A0: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11
+  $07C0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0C 00 00 00 00 00 00 00 00 00 00 00 00
+  $07E0: 0C 00 00 00 00 00 0C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+=== RAM $0400-$07FF (detail) ===
+  $0400: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $0410: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $0420: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $0430: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $0440: 11 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  $0450: 00 00 00 00 00 00 00 00 00 00 00 00 11 11 11 11  ................
+  $0460: 11 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  $0470: 00 00 00 00 00 00 00 00 00 00 00 00 11 6A 6A 11  .............jj.
+  $0480: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $0490: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $04A0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $04B0: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $04C0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $04D0: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $04E0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $04F0: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $0500: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 10 10  ................
+  $0510: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $0520: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 10 10  ................
+  $0530: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $0540: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $0550: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $0560: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00  ................
+  $0570: 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 6A 6A 11  .............jj.
+  $0580: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00  ................
+  $0590: 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11  ................
+  $05A0: 11 11 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00  ................
+  $05B0: 0F 0F 00 00 00 00 00 00 00 00 00 00 11 11 11 11  ................
+  $05C0: 11 11 00 00 00 00 00 00 00 00 00 00 0F 0F 00 00  ................
+  $05D0: 0F 0F 00 00 00 00 00 00 00 00 00 00 11 11 11 11  ................
+  $05E0: 11 11 0F 0F 00 00 0F 0F 0F 0F 00 00 00 00 00 00  ................
+  $05F0: 00 00 00 00 0F 0F 0F 0F 00 00 0F 0F 11 11 11 11  ................
+  $0600: 11 11 10 10 00 00 0F 0F 0F 0F 00 00 00 00 00 00  ................
+  $0610: 00 00 00 00 0F 0F 0F 0F 00 00 10 10 11 11 11 11  ................
+  $0620: 11 11 20 20 00 00 00 00 00 00 00 00 0F 0F 00 00  ..  ............
+  $0630: 0F 0F 00 00 00 00 00 00 00 00 20 20 11 58 13 11  ..........  .X..
+  $0640: 11 11 00 00 00 00 00 00 00 00 00 00 0F 0F 0F 0F  ................
+  $0650: 0F 0F 00 00 00 00 00 00 00 00 00 00 11 14 11 11  ................
+  $0660: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 0F 0F  ................
+  $0670: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11  ................
+  $0680: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $0690: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11  ................
+  $06A0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $06B0: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11  ................
+  $06C0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00  ................
+  $06D0: 0F 0F 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11  ................
+  $06E0: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00  ................
+  $06F0: 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 6C FC 11  .............l..
+  $0700: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 00 00 00  ................
+  $0710: 00 00 00 00 0F 0F 00 00 0F 0F 00 00 11 6D FD 11  .............m..
+  $0720: 11 11 00 00 0F 0F 00 00 0F 0F 00 00 00 0F 0F 0F  ................
+  $0730: 0F 00 00 00 0F 0F 00 00 0F 0F 00 00 11 11 11 11  ................
+  $0740: 11 11 00 00 00 00 00 00 00 00 00 00 00 0F C8 CA  ................
+  $0750: 0F 00 00 00 00 00 00 00 00 00 00 00 11 11 11 11  ................
+  $0760: 11 11 00 00 00 00 00 00 00 00 00 00 00 0F C9 CB  ................
+  $0770: 0F 00 00 00 00 00 00 00 00 00 00 00 11 11 11 11  ................
+  $0780: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $0790: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $07A0: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $07B0: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11  ................
+  $07C0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  $07D0: 00 00 00 0C 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  $07E0: 0C 00 00 00 00 00 0C 00 00 00 00 00 00 00 00 00  ................
+  $07F0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+
+=== Searching for 13-byte or 26-byte repeating patterns ===
+  Candidate at $0226, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(129), np.uint8(130), np.uint8(240)], fill=28%
+  Candidate at $0227, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(129), np.uint8(130), np.uint8(240)], fill=27%
+  Candidate at $0228, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(240)], fill=27%
+  Candidate at $0229, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(240)], fill=27%
+  Candidate at $022A, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(240)], fill=26%
+  Candidate at $022B, stride=13, values=[np.uint8(0), np.uint8(120), np.uint8(240)], fill=25%
+  Candidate at $022C, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $022D, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $022E, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $022F, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0230, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0231, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0232, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0233, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0234, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0235, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0236, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0237, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0238, stride=13, values=[np.uint8(0), np.uint8(240)], fill=25%
+  Candidate at $0239, stride=13, values=[np.uint8(0), np.uint8(130), np.uint8(240)], fill=25%
+  Candidate at $023A, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(130), np.uint8(240)], fill=26%
+  Candidate at $023B, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(240)], fill=27%
+  Candidate at $023C, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(240)], fill=27%
+  Candidate at $023D, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(158), np.uint8(240)], fill=27%
+  Candidate at $023E, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(158), np.uint8(240)], fill=28%
+  Candidate at $023F, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(158), np.uint8(240)], fill=28%
+  Candidate at $0240, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(120), np.uint8(130), np.uint8(158), np.uint8(240)], fill=29%
+  Candidate at $03B0, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(4), np.uint8(6), np.uint8(17), np.uint8(71)], fill=41%
+  Candidate at $03B1, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(4), np.uint8(6), np.uint8(17)], fill=41%
+  Candidate at $03B2, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(4), np.uint8(17)], fill=40%
+  Candidate at $03B3, stride=13, values=[np.uint8(0), np.uint8(2), np.uint8(17)], fill=40%
+  Candidate at $03B4, stride=13, values=[np.uint8(0), np.uint8(17)], fill=40%
+  Candidate at $03B5, stride=13, values=[np.uint8(0), np.uint8(17)], fill=40%
+  Candidate at $03B6, stride=13, values=[np.uint8(0), np.uint8(17)], fill=41%
+  Candidate at $03B7, stride=13, values=[np.uint8(0), np.uint8(17)], fill=41%
+  Candidate at $03B8, stride=13, values=[np.uint8(0), np.uint8(17)], fill=42%
+  Candidate at $03B9, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03BA, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03BB, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03BC, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03BD, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03BE, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03BF, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C0, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C1, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C2, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C3, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C4, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C5, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C6, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C7, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C8, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03C9, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03CA, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03CB, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03CC, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03CD, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03CE, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03CF, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03D0, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03D1, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03D2, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03D3, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03D4, stride=13, values=[np.uint8(0), np.uint8(17)], fill=43%
+  Candidate at $03D5, stride=13, values=[np.uint8(0), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $03D6, stride=13, values=[np.uint8(0), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $03D7, stride=13, values=[np.uint8(0), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $03D8, stride=13, values=[np.uint8(0), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03D9, stride=13, values=[np.uint8(0), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03DA, stride=13, values=[np.uint8(0), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03DB, stride=13, values=[np.uint8(0), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03DC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03DD, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03DE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03DF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03E0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $03E1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03E2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03E3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03E4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03E5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03E6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03E7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03E8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03E9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03EA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03EB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03EC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03ED, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $03EE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $03EF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $03F0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03F1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03F2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03F3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03F4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03F5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03F6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $03F7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $03F8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $03F9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03FA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03FB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03FC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03FD, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $03FE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $03FF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0400, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0401, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0402, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0403, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0404, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0405, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0406, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0407, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0408, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0409, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $040A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $040B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $040C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $040D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $040E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $040F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0410, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0411, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0412, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0413, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0414, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0415, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0416, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0417, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0418, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0419, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $041A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $041B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $041C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $041D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $041E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $041F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0420, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0421, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0422, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0423, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0424, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0425, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0426, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0427, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0428, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0429, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $042A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $042B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $042C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $042D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $042E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $042F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0430, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0431, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0432, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $0433, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0434, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0435, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0436, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0437, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0438, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0439, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $043A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $043B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $043C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $043D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $043E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $043F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0440, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0441, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0442, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0443, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0444, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0445, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0446, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0447, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0448, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0449, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $044A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $044B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $044C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $044D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $044E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $044F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $0450, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0451, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0452, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0453, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0454, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $0455, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $0456, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0457, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0458, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0459, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0460, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0461, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0462, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0463, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0464, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0465, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0466, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0467, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0468, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0469, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $046A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $046B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $046C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $046D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $046E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $046F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0470, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0471, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0472, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0473, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0474, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $0475, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0476, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0477, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0478, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0479, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $047A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $047B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $047C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $047D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $047E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $047F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0480, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0481, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0482, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0483, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0484, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0485, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0486, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0487, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0488, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0489, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $048A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $048B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $048C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $048D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $048E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $048F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0490, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0491, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0492, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0493, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0494, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0495, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0496, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0497, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0498, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $0499, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $049A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $049B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $049C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $049D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $049E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $049F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04A0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04A1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04A2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04A3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04A4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04A5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04A6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04A7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04A8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04A9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04AA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04AB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04AC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04AD, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04AE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04AF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04B0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04B1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04B2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04B3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04B4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04B5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04B6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04B7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04B8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $04B9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $04BA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04BB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04BC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $04BD, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=60%
+  Candidate at $04BE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04BF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04C0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04C1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $04C2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04C3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04C4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $04C5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04C6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04C7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04C8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04C9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04CA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04CB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04CC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04CD, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04CE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04CF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04D7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04D8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04D9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04DA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04DB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04DC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04DD, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04DE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $04DF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04E0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04E1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04E2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04E3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04E4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $04E5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $04E6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04E7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04E8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04E9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04EA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $04EB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $04EC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04ED, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04EE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $04EF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $04F0, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04F1, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04F2, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $04F3, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $04F4, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04F5, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04F6, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04F7, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04F8, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $04F9, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $04FA, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04FB, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04FC, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04FD, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $04FE, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $04FF, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0500, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $0501, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0502, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0503, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0504, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0505, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0506, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0507, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0508, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0509, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $050A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $050B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $050C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $050D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $050E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $050F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0510, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0511, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0512, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $0513, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $0514, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0515, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0516, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0517, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0518, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0519, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $051A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $051B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $051C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $051D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $051E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $051F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $0520, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0521, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0522, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $0523, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $0524, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0525, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0526, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $0527, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $0528, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0529, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $052A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $052B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $052C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $052D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $052E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $052F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0530, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0531, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0532, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0533, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0534, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0535, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0536, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0537, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0538, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0539, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $053A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $053B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $053C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $053D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $053E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $053F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0540, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0541, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0542, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0543, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0544, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0545, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0546, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0547, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0548, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0549, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $054A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=40%
+  Candidate at $054B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=40%
+  Candidate at $054C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $054D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $054E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $054F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0550, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0551, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0552, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0553, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0554, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0555, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0556, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0557, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0558, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0559, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $055A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $055B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $055C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $055D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $055E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $055F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0560, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0561, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0562, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0563, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0564, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0565, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $0566, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0567, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0568, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $0569, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $056A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=40%
+  Candidate at $056B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=40%
+  Candidate at $056C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $056D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=41%
+  Candidate at $056E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=42%
+  Candidate at $056F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0570, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0571, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0572, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=43%
+  Candidate at $0573, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0574, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0575, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0576, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=44%
+  Candidate at $0577, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $0578, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $0579, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $057A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=46%
+  Candidate at $057B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=46%
+  Candidate at $057C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=46%
+  Candidate at $057D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=46%
+  Candidate at $057E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=45%
+  Candidate at $057F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=44%
+  Candidate at $0580, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=44%
+  Candidate at $0581, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0582, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0583, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0584, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0585, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0586, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0587, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0588, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0589, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $058A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $058B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $058C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $058D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $058E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $058F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0590, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0591, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0592, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=43%
+  Candidate at $0593, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=44%
+  Candidate at $0594, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32)], fill=44%
+  Candidate at $0595, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(88)], fill=44%
+  Candidate at $063C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(19), np.uint8(20), np.uint8(88)], fill=55%
+  Candidate at $063D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(19), np.uint8(20), np.uint8(88)], fill=55%
+  Candidate at $063E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(19), np.uint8(20)], fill=54%
+  Candidate at $063F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=54%
+  Candidate at $0640, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=54%
+  Candidate at $0641, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=54%
+  Candidate at $0642, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0643, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0644, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0645, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0646, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0647, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0648, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0649, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $064A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $064B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $064C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=54%
+  Candidate at $064D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=54%
+  Candidate at $064E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $064F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0650, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0651, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0652, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=52%
+  Candidate at $0653, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=52%
+  Candidate at $0654, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20)], fill=53%
+  Candidate at $0655, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108)], fill=53%
+  Candidate at $0656, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=54%
+  Candidate at $0657, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=54%
+  Candidate at $0658, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=55%
+  Candidate at $0659, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=56%
+  Candidate at $065A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=56%
+  Candidate at $065B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=56%
+  Candidate at $065C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=56%
+  Candidate at $065D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(20), np.uint8(108), np.uint8(252)], fill=56%
+  Candidate at $065E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=56%
+  Candidate at $065F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=55%
+  Candidate at $0660, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=55%
+  Candidate at $0661, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=55%
+  Candidate at $0662, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=54%
+  Candidate at $0663, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=54%
+  Candidate at $0664, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=54%
+  Candidate at $0665, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=54%
+  Candidate at $0666, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=53%
+  Candidate at $0667, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=53%
+  Candidate at $0668, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=53%
+  Candidate at $0669, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=53%
+  Candidate at $066A, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=52%
+  Candidate at $066B, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=52%
+  Candidate at $066C, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=53%
+  Candidate at $066D, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=53%
+  Candidate at $066E, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=52%
+  Candidate at $066F, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=51%
+  Candidate at $0670, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=51%
+  Candidate at $0671, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=51%
+  Candidate at $0672, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=51%
+  Candidate at $0673, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=51%
+  Candidate at $0674, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(252)], fill=51%
+  Candidate at $0675, stride=13, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(108), np.uint8(109), np.uint8(252)], fill=51%
+  Candidate at $0750, stride=13, values=[np.uint8(0), np.uint8(12), np.uint8(15), np.uint8(17), np.uint8(201), np.uint8(203)], fill=49%
+  Candidate at $0751, stride=13, values=[np.uint8(0), np.uint8(12), np.uint8(15), np.uint8(17), np.uint8(201), np.uint8(203)], fill=48%
+  Candidate at $0752, stride=13, values=[np.uint8(0), np.uint8(12), np.uint8(15), np.uint8(17), np.uint8(201), np.uint8(203)], fill=48%
+  Candidate at $0753, stride=13, values=[np.uint8(0), np.uint8(12), np.uint8(15), np.uint8(17), np.uint8(201), np.uint8(203)], fill=48%
+  Candidate at $0754, stride=13, values=[np.uint8(0), np.uint8(12), np.uint8(15), np.uint8(17), np.uint8(201), np.uint8(203)], fill=48%
+  Candidate at $0755, stride=13, values=[np.uint8(0), np.uint8(12), np.uint8(15), np.uint8(17), np.uint8(201), np.uint8(203)], fill=48%
+  Candidate at $0756, stride=13, values=[np.uint8(0), np.uint8(12), np.uint8(15), np.uint8(17), np.uint8(201), np.uint8(203)], fill=48%
+  Candidate at $03B2, stride=26, values=[np.uint8(0), np.uint8(2), np.uint8(4), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $03B3, stride=26, values=[np.uint8(0), np.uint8(2), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $03B4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $03B5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $03B6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $03B7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=45%
+  Candidate at $03B8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03B9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03BA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03BB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03BC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03BD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=46%
+  Candidate at $03BE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03BF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03C0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03C1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03C2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $03C3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $03C4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $03C5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $03C6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $03C7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $03C8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03C9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03CA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03CB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03CC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03CD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $03CE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03CF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03D0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03D1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03D2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $03D3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03D4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03D5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03D6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03D7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03D8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03D9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03DA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $03DB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $03DC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $03DD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $03DE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03DF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03E0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03E1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03E2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $03E3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03E4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03E5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03E6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03E7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03E8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03E9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03EA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $03EB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $03EC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $03ED, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $03EE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $03EF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $03F0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $03F1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $03F2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $03F3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03F4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03F5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03F6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03F7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03F8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03F9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03FA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $03FB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $03FC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $03FD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $03FE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $03FF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0400, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=59%
+  Candidate at $0401, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0402, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0403, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0404, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0405, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=58%
+  Candidate at $0406, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0407, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0408, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0409, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $040A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $040B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $040C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $040D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $040E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $040F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0410, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0411, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=57%
+  Candidate at $0412, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0413, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0414, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0415, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0416, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0417, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0418, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=56%
+  Candidate at $0419, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $041A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $041B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=55%
+  Candidate at $041C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $041D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $041E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $041F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=54%
+  Candidate at $0420, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0421, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0422, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0423, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0424, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=53%
+  Candidate at $0425, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $0426, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $0427, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $0428, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $0429, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $042A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $042B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $042C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $042D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $042E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $042F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0430, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0431, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0432, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0433, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0434, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0435, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0436, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0437, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0438, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0439, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $043A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $043B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $043C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $043D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $043E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $043F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0440, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0441, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0442, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=47%
+  Candidate at $0443, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0444, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0445, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0446, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0447, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=48%
+  Candidate at $0448, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $0449, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $044A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $044B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $044C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $044D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $044E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $044F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0450, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0451, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0452, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0453, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0454, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0455, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0456, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0457, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0458, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0459, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $045C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $045D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $045E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $045F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0460, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0461, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0462, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0463, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0464, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0465, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0466, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0467, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0468, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0469, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $046A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $046B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $046C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $046D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $046E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $046F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0470, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0471, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0472, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0473, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0474, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0475, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0476, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0477, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0478, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0479, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $047A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $047B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $047C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $047D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=52%
+  Candidate at $047E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $047F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0480, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0481, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0482, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0483, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0484, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0485, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0486, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0487, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0488, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $0489, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $048A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $048B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $048C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $048D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $048E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $048F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0490, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0491, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0492, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0493, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0494, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0495, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0496, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0497, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0498, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $0499, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $049A, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $049B, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $049C, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $049D, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $049E, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $049F, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04A0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04A1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $04A2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $04A3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $04A4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04A5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04A6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04A7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04A8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04A9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04AA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04AB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04AC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04AD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04AE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04AF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04B9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04BA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04BB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04BC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04BD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04BE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04BF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04C0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04C1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $04C2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $04C3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=49%
+  Candidate at $04C4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04C5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04C6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04C7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04C8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04C9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04CA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04CB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04CC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04CD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04CE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=50%
+  Candidate at $04CF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04D0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(106)], fill=51%
+  Candidate at $04D1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=51%
+  Candidate at $04D2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=51%
+  Candidate at $04D3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=51%
+  Candidate at $04D4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=51%
+  Candidate at $04D5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=51%
+  Candidate at $04D6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04D7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04D8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04D9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04DA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04DB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04DC, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04DD, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04DE, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04DF, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04E0, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=50%
+  Candidate at $04E1, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E2, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E3, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E4, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E5, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E6, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E7, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E8, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04E9, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04EA, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%
+  Candidate at $04EB, stride=26, values=[np.uint8(0), np.uint8(15), np.uint8(16), np.uint8(17), np.uint8(32), np.uint8(106)], fill=49%

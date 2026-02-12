@@ -1,0 +1,51 @@
+Battle City - RAM адреса для подсчёта килов
+=============================================
+
+КИЛЫ ПО ТИПАМ ВРАГОВ (1-й игрок):
+  $73 - Enmy_KlledBy1P_Count[0]  (тип 1)
+  $74 - Enmy_KlledBy1P_Count[1]  (тип 2)
+  $75 - Enmy_KlledBy1P_Count[2]  (тип 3)
+  $76 - Enmy_KlledBy1P_Count[3]  (тип 4)
+
+КИЛЫ ПО ТИПАМ ВРАГОВ (2-й игрок):
+  $77 - Enmy_KlledBy2P_Count[0]  (тип 1)
+  $78 - Enmy_KlledBy2P_Count[1]  (тип 2)
+  $79 - Enmy_KlledBy2P_Count[2]  (тип 3)
+  $7A - Enmy_KlledBy2P_Count[3]  (тип 4)
+
+ИТОГО КИЛОВ:
+  $7D - TotalEnmy_KilledBy1P     (сумма килов 1P, считается на экране очков)
+  $7E - TotalEnmy_KilledBy2P     (сумма килов 2P, считается на экране очков)
+
+ВРАГИ:
+  $7F - Enemy_Reinforce_Count    (враги в запасе, ждут респауна)
+  $80 - Enemy_Counter            (все враги: на экране + в запасе)
+  $8B - Enemy_Count[0]           (оставшиеся враги типа 1 на уровне)
+  $8C - Enemy_Count[1]           (оставшиеся враги типа 2 на уровне)
+  $8D - Enemy_Count[2]           (оставшиеся враги типа 3 на уровне)
+  $8E - Enemy_Count[3]           (оставшиеся враги типа 4 на уровне)
+
+ЖИЗНИ ИГРОКОВ:
+  $51 - Player1_Lives
+  $52 - Player2_Lives
+
+УРОВЕНЬ:
+  $86 - Level_Number
+
+ТАНКИ (массивы по 8 байт: [0]=1P, [1]=2P, [2..7]=враги):
+  $90-$97 - Tank_X               (X координаты)
+  $98-$9F - Tank_Y               (Y координаты)
+  $A0-$A7 - Tank_Status          (статусы танков)
+  $A8-$AF - Tank_Type            (типы танков)
+
+ПУЛИ (массивы по 10 байт):
+  $B8-$C1 - Bullet_X
+  $C2-$CB - Bullet_Y
+  $CC-$D5 - Bullet_Status
+  $D6-$DF - Bullet_Property
+
+ПРОЧЕЕ:
+  $68 - HQ_Status                ($80=штаб цел, 0=уничтожен)
+  $6D - Pause_Flag
+  $46 - Level_Mode               (0=обычный, 1=усложнённый, 2=демо)
+  $100 - EnemyFreeze_Timer       (таймер заморозки врагов)

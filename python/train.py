@@ -15,7 +15,7 @@ from python.config import RLConfig
 from python.battle_city_env import BattleCityEnv
 
 from stable_baselines3.common.env_util import make_vec_env
-import cv2
+import pygame
 
 METRICS_FILE = './checkpoints/training_metrics.json'
 
@@ -42,18 +42,36 @@ class LoggingCallback(BaseCallback):
         super().__init__(verbose)
         self.episode_rewards = deque(maxlen=100)
         self.episode_kills = deque(maxlen=100)
+        # Store FULL history for plotting
+        self.all_episode_kills = []
+        self.all_episode_rewards = []
+        
         self.total_games = 0
         self.log_interval = log_interval
         self.save_interval = save_interval  # Save metrics every N steps
         self.step_count = 0
+        self._pg_screen = None
+        self._pg_clock = None
+        self._pg_font = None
+
+    def _init_pygame(self):
+        if self._pg_screen is None and not RLConfig.HEADLESS:
+            pygame.init()
+            self._pg_screen = pygame.display.set_mode((512, 480))
+            pygame.display.set_caption("Battle City AI - Training")
+            self._pg_clock = pygame.time.Clock()
+            self._pg_font = pygame.font.SysFont("consolas", 14)
 
     def save_metrics(self):
         """Save training metrics to JSON file."""
         metrics = {
             'total_games': int(self.total_games),
             'step_count': int(self.step_count),
-            'episode_kills': [int(k) for k in self.episode_kills],
-            'episode_rewards': [float(r) for r in self.episode_rewards],
+            'episode_kills': [int(k) for k in self.episode_kills], # Buffer
+            'episode_rewards': [float(r) for r in self.episode_rewards], # Buffer
+            # Full History
+            'all_episode_kills': [int(k) for k in self.all_episode_kills],
+            'all_episode_rewards': [float(r) for r in self.all_episode_rewards],
         }
         os.makedirs(os.path.dirname(METRICS_FILE), exist_ok=True)
         with open(METRICS_FILE, 'w') as f:
@@ -70,6 +88,10 @@ class LoggingCallback(BaseCallback):
                 self.step_count = metrics.get('step_count', 0)
                 self.episode_kills = deque(metrics.get('episode_kills', []), maxlen=100)
                 self.episode_rewards = deque(metrics.get('episode_rewards', []), maxlen=100)
+                
+                self.all_episode_kills = metrics.get('all_episode_kills', [])
+                self.all_episode_rewards = metrics.get('all_episode_rewards', [])
+                
                 print(f"[METRICS LOADED] Games: {self.total_games}, Steps: {self.step_count}")
                 return True
             except Exception as e:
@@ -86,8 +108,18 @@ class LoggingCallback(BaseCallback):
                 info = self.locals['infos'][i]
                 
                 if 'kills' in info:
-                    self.episode_kills.append(info['kills'])
+                    kills = info['kills']
+                    self.episode_kills.append(kills)
+                    self.all_episode_kills.append(kills)
                 
+                # Reward is not directly available in info usually, need to track return?
+                # SB3 monitors usually track this. But we can track 'episode' info if Monitor wrapper used.
+                # Monitor wrapper adds 'episode' key: {'r': <return>, 'l': <length>, 't': <time>}
+                if 'episode' in info:
+                    rew = info['episode']['r']
+                    self.episode_rewards.append(rew)
+                    self.all_episode_rewards.append(rew)
+
                 if self.verbose > 0:
                      kill_avg = np.mean(self.episode_kills) if self.episode_kills else 0
                      self.logger.record("custom/games_played", self.total_games)
@@ -103,32 +135,43 @@ class LoggingCallback(BaseCallback):
         if self.step_count % self.save_interval == 0:
             self.save_metrics()
         
-        # Explicit rendering in Main Process
+        # Pygame rendering in Main Process
         if not RLConfig.HEADLESS:
+            self._init_pygame()
             try:
-                # Render using the original env logic (which returns RGB array)
-                frames = self.training_env.render(mode='rgb_array') 
-                
+                # Pump pygame events to keep window responsive
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        RLConfig.HEADLESS = True  # Disable rendering on close
+                        pygame.quit()
+                        self._pg_screen = None
+                        return True
+
+                frames = self.training_env.render(mode='rgb_array')
                 if frames is not None:
                     target_frame = None
                     if isinstance(frames, list):
                         target_frame = frames[0]
                     elif isinstance(frames, np.ndarray):
-                            if len(frames.shape) == 4: # (N, H, W, C)
-                                target_frame = frames[0]
-                            else:
-                                target_frame = frames
-                    
-                    if target_frame is not None:
-                            # Convert RGB to BGR
-                            frame_bgr = cv2.cvtColor(target_frame, cv2.COLOR_RGB2BGR)
-                            # Resize
-                            frame_bgr = cv2.resize(frame_bgr, (512, 480), interpolation=cv2.INTER_NEAREST)
-                            cv2.imshow("Battle City AI", frame_bgr)
-                            cv2.waitKey(1)
-            except Exception as e:
+                        if len(frames.shape) == 4:
+                            target_frame = frames[0]
+                        else:
+                            target_frame = frames
+
+                    if target_frame is not None and self._pg_screen is not None:
+                        surf = pygame.surfarray.make_surface(np.transpose(target_frame, (1, 0, 2)))
+                        surf = pygame.transform.scale(surf, (512, 480))
+                        self._pg_screen.blit(surf, (0, 0))
+
+                        # Overlay info
+                        kill_avg = np.mean(self.episode_kills) if self.episode_kills else 0
+                        txt = f"Games:{self.total_games}  AvgKills:{kill_avg:.1f}  Steps:{self.step_count}"
+                        text_surf = self._pg_font.render(txt, True, (0, 255, 0))
+                        self._pg_screen.blit(text_surf, (4, 4))
+
+                        pygame.display.flip()
+            except Exception:
                 pass
-                        
         return True
 
 def make_env_rank(rank, seed=0):
@@ -214,7 +257,8 @@ def main():
                 vf_coef=RLConfig.VF_COEF,
                 max_grad_norm=RLConfig.MAX_GRAD_NORM,
                 tensorboard_log="./tensorboard_logs/",
-                device="cuda"
+                device="cuda",
+                target_kl=RLConfig.TARGET_KL
             )
         except Exception as e:
              print(f"Checkpoint load failed (Likely Architecture Mismatch): {e}")
@@ -249,7 +293,8 @@ def main():
             ent_coef=RLConfig.ENTROPY_COEF,
             tensorboard_log="./tensorboard_logs/",
             policy_kwargs=policy_kwargs,
-            device="cuda" 
+            device="cuda",
+            target_kl=RLConfig.TARGET_KL 
         )
 
     # Checkpoints

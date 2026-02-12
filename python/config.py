@@ -14,16 +14,19 @@ class RLConfig:
     GAMMA = 0.99
     GAE_LAMBDA = 0.90
     CLIP_RANGE = 0.2
+    
+    # Target KL new parameter
+    TARGET_KL = 0.03
     VF_COEF = 0.5
     MAX_GRAD_NORM = 0.5
     
     # Ультра-частые обновления (как просил)
     N_STEPS = 512 
     BATCH_SIZE = 512
-    N_EPOCHS = 15
+    N_EPOCHS = 7
     
     # Гигантская и глубокая сеть (3 слоя по 2048 нейронов)
-    HIDDEN_LAYERS = [512, 512]
+    HIDDEN_LAYERS = [2048,2048,2048]
     
     SAVE_FREQ = 10000
     LOG_INTERVAL = 1000
