@@ -6,21 +6,52 @@ from nes_py import NESEnv
 from nes_py.wrappers import JoypadSpace
 from .config import RLConfig
 
+
 # Define simple actions: Move and Fire
 # Battle City controls: arrows for movement, A/B for fire.
 # We'll combine movement + fire for efficiency.
 COMPLEX_MOVEMENT = [
     ['NOOP'],
     ['up'],
-    ['right'],
     ['down'],
     ['left'],
+    ['right'],
     ['A'],
     ['up', 'A'],
-    ['right', 'A'],
     ['down', 'A'],
     ['left', 'A'],
+    ['right', 'A'],
 ]
+
+class MultiDiscreteActionSpaceWrapper(gym.ActionWrapper):
+    """
+    Wraps the BattleCityEnv JoypadSpace (which has 10 discrete actions)
+    into a MultiDiscrete([5, 2, 8]) action space.
+    Action[0] Movement: 0=NOOP, 1=up, 2=down, 3=left, 4=right
+    Action[1] Fire: 0=NOOP, 1=A
+    Action[2] Duration: 0=1 frame, 1=2 frames, ..., 7=8 frames
+    """
+    def __init__(self, env):
+        super().__init__(env)
+        self.action_space = spaces.MultiDiscrete([5, 2, 8])
+        
+    def action(self, act):
+        # act is [mov_idx, fire_idx, duration_idx]
+        if isinstance(act, (list, np.ndarray)) and len(act) >= 3:
+            mov, fire = act[0], act[1]
+        elif isinstance(act, (list, np.ndarray)) and len(act) == 2:
+            mov, fire = act[0], act[1]
+        else:
+            # Fallback just in case
+            mov, fire = act[0], 0
+        
+        if fire == 0:
+            return mov
+        else:
+            if mov == 0:
+                return 5
+            else:
+                return mov + 5
 
 class BattleCityEnv(gym.Wrapper):
     def __init__(self, render_mode=None, is_visible=False, start_level=None):
@@ -30,45 +61,100 @@ class BattleCityEnv(gym.Wrapper):
         # Apply Joypad wrapper to discrete actions
         env = JoypadSpace(env, COMPLEX_MOVEMENT)
         
-
+        # Apply MultiDiscrete wrapper to separate movement and fire
+        env = MultiDiscreteActionSpaceWrapper(env)
         
         # Use gym.Wrapper
         super().__init__(env)
         
         # Store render_mode locally. 
         # We don't set it on env because JoypadSpace might block it (property)
-        
         # Store render_mode locally. 
-        self._custom_render_mode = render_mode
+        self.render_mode = render_mode
         self.is_visible = is_visible
         self.start_level = start_level
-        self.metadata = {'render_modes': ['human', 'rgb_array']}
+        # Fix for Gymnasium expecting string keys dict instead of module reference from nested gym envs
+        self.__dict__['metadata'] = {'render_modes': ['human', 'rgb_array']}
         
-        # Observation Space: 84x84 Grayscale (Standard Atari)
-        self.observation_space = spaces.Box(low=0, high=255, shape=(84, 84, 1), dtype=np.uint8)
+        # Explicity convert old gym spaces to new gymnasium spaces 
+        # so EnvCompatibility doesn't choke later.
+        self.observation_space = spaces.Box(low=0.0, high=1.0, shape=(44,), dtype=np.float32)
+        
+        # We applied MultiDiscreteActionSpaceWrapper which sets correct gymnasium MultiDiscrete space.
+        # No need to overwrite it with Discrete(n) here anymore, let's just make sure action_space is carried over correctly.
+        if hasattr(self.env, 'action_space'):
+             self.action_space = self.env.action_space
+
         
         # Trackers
         self.prev_kills = [0] * 4
         self.cumulative_kills = 0
         self.prev_lives = 0
+        self.steps_in_episode = 0
         
+    def get_tactical_rgb(self):
+        """Returns a downscaled 52x52 RGB tactical map for play.py."""
+        screen = self.raw_env.screen
+        board = screen[16:224, 16:224]  # 208x208 playfield
+        thumb = cv2.resize(board, (52, 52), interpolation=cv2.INTER_NEAREST)
+        return thumb
+
     def _get_obs(self):
-        """Returns the current screen, cropped to playfield, grayscale, resized to 84x84."""
-        # Get raw screen from nes_py (240, 256, 3)
-        screen = self.env.screen.copy()
+        """Returns 44-dimensional RAM state vector."""
+        obs = np.zeros(44, dtype=np.float32)
         
-        # Crop to playfield only (remove right sidebar + borders)
-        # Playfield: 13x13 tiles × 16px = 208x208, starts at ~(16, 8)
-        cropped = screen[16:224, 16:224]  # (208, 208, 3)
+        # 1. Base Status (0) & Player Lives (1)
+        obs[0] = float(self.env.ram[RLConfig.ADDR_BASE])
+        obs[1] = float(self.env.ram[RLConfig.ADDR_LIVES])
         
-        # Convert to Grayscale
-        gray = cv2.cvtColor(cropped, cv2.COLOR_RGB2GRAY)
+        # 2. Player State (2, 3, 4)
+        px = self.env.ram[RLConfig.ADDR_PLAYER_X]
+        py = self.env.ram[RLConfig.ADDR_PLAYER_Y]
+        obs[2] = float(px)
+        obs[3] = float(py)
+        obs[4] = float(self.env.ram[RLConfig.ADDR_ENEMY_STATUS_BASE]) # Direction/Status (0xA0)
         
-        # Resize to 84x84 (Standard Nature CNN input)
-        resized = cv2.resize(gray, (84, 84), interpolation=cv2.INTER_LINEAR)
+        # 3. Enemies (slots 2 to 7) (5-22)
+        idx = 5
+        for i in range(2, 8):
+            obs[idx] = float(self.env.ram[RLConfig.ADDR_ENEMY_STATUS_BASE + i])
+            obs[idx+1] = float(self.env.ram[RLConfig.ADDR_COORD_X_BASE + i])
+            obs[idx+2] = float(self.env.ram[RLConfig.ADDR_COORD_Y_BASE + i])
+            idx += 3
+            
+        # 4. Bullets (slots 0 to 3) (23-34)
+        for i in range(4):
+            obs[idx] = float(self.env.ram[0xD8 + i]) # Bullet Status/Dir
+            obs[idx+1] = float(self.env.ram[0xD0 + i]) # Bullet X
+            obs[idx+2] = float(self.env.ram[0xC8 + i]) # Bullet Y
+            idx += 3
+            
+        # 5. Local Vison: 3x3 Tile Grid (35-43)
+        # Check center pixel of 16x16 tiles around player
+        cx, cy = int(px) + 8, int(py) + 8
+        offsets = [
+            (-16, -16), (0, -16), (16, -16),
+            (-16,   0), (0,   0), (16,   0),
+            (-16,  16), (0,  16), (16,  16)
+        ]
         
-        # Add channel dimension (84, 84, 1)
-        return np.expand_dims(resized, axis=-1)
+        gray_screen = cv2.cvtColor(self.env.screen, cv2.COLOR_RGB2GRAY)
+        
+        for dx, dy in offsets:
+            nx, ny = cx + dx, cy + dy
+            # Check Playfield bounds (usually X: 16-240, Y: 16-240)
+            if nx < 16 or nx >= 240 or ny < 16 or ny >= 240:
+                obs[idx] = 255.0 # Wall/Border
+            else:
+                # Average center 4x4 pixels
+                patch = gray_screen[ny-2:ny+2, nx-2:nx+2]
+                if np.mean(patch) > 10.0:
+                    obs[idx] = 255.0 # Brick, Steel, Water or Enemy
+                else:
+                    obs[idx] = 0.0 # Free to move
+            idx += 1
+            
+        return obs / 255.0 # NORMALIZE FOR MLP STABILITY
 
     def reset(self, **kwargs):
         # Handle Gymnasium vs Gym API differences
@@ -79,57 +165,47 @@ class BattleCityEnv(gym.Wrapper):
         kwargs.pop('seed', None)
         kwargs.pop('options', None)
 
+
         # We ignore the pixel observation returned by reset
         _ = self.env.reset(**kwargs)
         
         # Skip Title Screen (Full 5-step sequence)
+        # NOTE: We use self.raw_env.step() to send RAW NES button presses,
+        # bypassing JoypadSpace and MultiDiscrete wrappers.
         
-        # 1. Wait 80 frames (Logo music)
-        # print("Reset: Boot Sequence Step 1/5...")
-        for _ in range(80): 
-            self.env.env.step(0) 
+        # 1. Wait for Logo & Title
+        for _ in range(120): self.raw_env.step(0) 
             
-        # 2. Press START (Skip Title)
-        # print("Reset: Boot Sequence Step 2/5 (Skip Title)...")
-        for _ in range(10): self.env.env.step(8) 
-        for _ in range(30): self.env.env.step(0) 
+        # 2. Press START (Skip Title, go to Player Select)
+        for _ in range(15): self.raw_env.step(8) 
+        for _ in range(40): self.raw_env.step(0) 
 
         # Force Level Selection if specified
         if self.start_level is not None:
-             # Level is stored at 0x85. Note: Internal levels likely 0-34? 
-             # Or 1-35? Usually 0-based in RAM, but visual is 1-based.
-             # Assuming 1-based input, so we write start_level - 1.
-             # Need to be sure when to write this. 
-             # Writing it BEFORE hitting start on the "Stage 1" screen is safest.
-             
-             # Let's write it now, before we select 1 player and before the stage screen.
-             # Just to be safe, write it multiple times or ensure it sticks.
-             target_val = self.start_level # RAM 1 = Stage 1 (User confirmed)
-             self.env.ram[RLConfig.ADDR_STAGE] = target_val
+             target_val = self.start_level # RAM 1 = Stage 1
+             self.raw_env.ram[RLConfig.ADDR_STAGE] = target_val
         
-        # 3. Press START (Select 1 Player)
-        # print("Reset: Boot Sequence Step 3/5 (Select 1 Player)...")
-        for _ in range(10): self.env.env.step(8)
-        for _ in range(30): self.env.env.step(0)
+        # 3. Press START (Select 1 Player, go to Stage Select)
+        for _ in range(15): self.raw_env.step(8)
+        for _ in range(40): self.raw_env.step(0)
 
         # Re-enforce Level Selection just in case
         if self.start_level is not None:
-             target_val = self.start_level
-             self.env.ram[RLConfig.ADDR_STAGE] = target_val
+             self.raw_env.ram[RLConfig.ADDR_STAGE] = self.start_level
 
-        # 4. Press START (Skip STAGE 1 Screen)
-        # print("Reset: Boot Sequence Step 4/5 (Skip Stage Screen)...")
-        for _ in range(10): self.env.env.step(8)
+        # 4. Press START (Start Stage)
+        for _ in range(15): self.raw_env.step(8)
         
-        # 5. Wait 60 frames (Curtain open)
-        # print("Reset: Boot Sequence Step 5/5 (Wait Curtain)...")
-        for _ in range(60): self.env.env.step(0)
+        # 5. Wait for Curtain to fully open and level to draw
+        for _ in range(100): self.raw_env.step(0)
              
         # Reset trackers
         # Snapshot RAM kills after boot — treats any residual values as baseline (not new kills)
-        self.prev_kills = [int(self.env.ram[addr]) for addr in RLConfig.ADDR_KILLS]
+        # Snapshot RAM kills after boot
+        self.prev_enemies_left = self.env.ram[0x80]
         self.cumulative_kills = 0
         self.death_count = 0
+        self.steps_in_episode = 0
         # Initialize lives to ACTUAL value from RAM
         self.prev_lives = self.env.ram[0x51]
         
@@ -229,18 +305,33 @@ class BattleCityEnv(gym.Wrapper):
         return False
 
     def step(self, action):
-        # We ignore the pixel observation returned by step
-        _, reward, done, info = self.env.step(action)
+        self.steps_in_episode += 1
+        
+        # Determine duration from action (if present in action array)
+        dur_idx = 0 # default 1 frame
+        if isinstance(action, (list, np.ndarray)) and len(action) >= 3:
+            dur_idx = action[2]
+            
+        DURATION_MAP = [1, 2, 3, 4, 5, 6, 7, 8]
+        n_repeat = DURATION_MAP[min(dur_idx, len(DURATION_MAP) - 1)]
+        
+        total_reward = 0.0
+        done = False
+        info = {}
+        
+        for _ in range(n_repeat):
+            # We ignore the pixel observation returned by step
+            _, reward, done, current_info = self.env.step(action)
+            total_reward += reward
+            # Merge or overwrite info 
+            info.update(current_info)
+            if done:
+                break
+        
+        reward = total_reward
         
         # Check for Visual Game Over
-        visual_penalty = 0
         if not done:
-             # OpenCV Check (Backup or Removed)
-             # if self._check_game_over():
-             #     done = True
-             #     info['visual_game_over'] = True
-             #     visual_penalty = -20
-             
              # RAM Check for Base Destruction (0x68)
              # Logic: 0 (Boot) -> 80 (Active) -> 0 (Destroyed)
              base_status = self.env.ram[RLConfig.ADDR_BASE]
@@ -253,7 +344,17 @@ class BattleCityEnv(gym.Wrapper):
                  if base_status == 0:
                      done = True
                      info['base_destroyed'] = True
-                     visual_penalty = -10 # Increased to -10 as requested
+                     
+                 # INVULNERABLE BASE CHEAT
+                 # Uses the game's native "Shovel" (Лопата) bonus mechanically
+                 if getattr(RLConfig, 'INVULNERABLE_BASE', False) and not done:
+                     # 0x45 is the HQArmour_Timer. If it falls low, we re-apply the Shovel
+                     if self.env.ram[0x45] < 5:
+                         self.env.ram[0x88] = 2 # Shovel Powerup (ID 2)
+                         self.env.ram[0x86] = self.env.ram[0x90] # X to Player
+                         self.env.ram[0x87] = self.env.ram[0x98] # Y to Player
+                     else:
+                         self.env.ram[0x45] = 20 # Freeze timer so it never disappears
         
         # Check for Lives (0x51)
         # If lives == 0, it means Game Over (or about to be)
@@ -262,131 +363,151 @@ class BattleCityEnv(gym.Wrapper):
             if curr_lives == 0:
                 done = True
                 info['game_over'] = True
-                visual_penalty = -20 # Penalty for losing all lives (Same as Base Destruction)
         
-        # Custom Reward Logic
-        curr_kills = [self.env.ram[addr] for addr in RLConfig.ADDR_KILLS]
+        # Tracks metrics for info dict
+        curr_enemies_left = self.env.ram[0x80]
         curr_lives = self.env.ram[RLConfig.ADDR_LIVES]
         
-        # Calculate kill reward (cumulative, survives RAM resets between levels)
-        kill_reward = 0
-        total_kills_ram = int(sum(curr_kills))
-        total_prev_kills_ram = int(sum(self.prev_kills))
+        # Address 0x80 tracks remaining enemies from 20 down to 0
+        # If it decreases, it means we killed an enemy
+        if 0 <= curr_enemies_left < self.prev_enemies_left and self.prev_enemies_left <= 20:
+            new_kills = self.prev_enemies_left - curr_enemies_left
+            self.cumulative_kills += new_kills
         
-        # Detect new kills this frame
-        if total_kills_ram > total_prev_kills_ram:
-            # Normal case: RAM increased
-            new_kills = total_kills_ram - total_prev_kills_ram
-        elif total_kills_ram > 0 and total_kills_ram < total_prev_kills_ram:
-            # RAM reset (level changed), all current RAM kills are new
-            new_kills = total_kills_ram
-        else:
-            new_kills = 0
-        
-        # Accumulate
-        self.cumulative_kills += new_kills
-        
-        if new_kills > 0:
-            for k in range(new_kills):
-                kill_idx = self.cumulative_kills - new_kills + k + 1
-                # Super Aggressive Exponential growth
-                step_reward = 5.0 * (1.5 ** (kill_idx - 1))
-                kill_reward += step_reward
-
         # HUGE BONUS for Level Completion (20 Kills)
-        if not done and self.cumulative_kills >= 20 and (self.cumulative_kills - new_kills) < 20:
+        # In Battle City, winning a stage happens when 0 enemies are left
+        if not done and curr_enemies_left == 0 and self.prev_enemies_left > 0:
              done = True
              info['is_success'] = True
-             kill_reward += 1000 # JACKPOT reward for 20 kills
         
-        # Calculate death penalty
-        death_penalty = 0
+        # Track deaths
         if curr_lives < self.prev_lives:
             self.death_count += 1
-            death_penalty = -self.death_count
             
-        # EXPLORATION REWARD
-        # Map is 192x192 pixels (from 24 to 216).
-        # We divide it into 16x16 px cells. Total 12x12 = 144 cells.
-        exploration_reward = 0
-        
-        # Read raw coordinates
+        # Exploration tracker (just for info)
         px = self.env.ram[RLConfig.ADDR_PLAYER_X]
         py = self.env.ram[RLConfig.ADDR_PLAYER_Y]
         
-        # Bounds checks
+        # EXPLORATION REWARD
+        exploration_reward = 0.0
         if 24 <= px <= 216 and 24 <= py <= 216:
-            # 16px grid
             grid_x = (px - 24) // 16
             grid_y = (py - 24) // 16
             
             cell_id = (grid_x, grid_y)
-            
             if cell_id not in self.visited_cells:
                 self.visited_cells.add(cell_id)
-                exploration_reward = 0.0 # Disabled as requested (was 1.0)
-        
+                exploration_reward = 0.05 # 0.05 points per new cell (heavily nerfed from 1.0)
+                
         # PROXIMITY REWARD (Approaching Enemies)
         proximity_reward = 0.0
         
-        # Current Player Position
+        # Check if player moved (Anti-Camping)
         curr_px = self.env.ram[RLConfig.ADDR_PLAYER_X]
         curr_py = self.env.ram[RLConfig.ADDR_PLAYER_Y]
-        
-        # Check if player moved (Anti-Camping)
-        # We only reward proximity if the player is actively moving.
         player_moved = (curr_px != self.prev_px) or (curr_py != self.prev_py)
         
-        # 1. Get current distance
         curr_dist = self._get_nearest_dist()
         
-        # 2. Validation
         if curr_dist != 999.0 and self.prev_min_dist != 999.0:
-            # 3. Calculate Difference
-            # Positive diff = We got closer (Good)
             diff = self.prev_min_dist - curr_dist
             
-            # 4. Filters for Teleportation / Respawn
+            # Filters for Teleportation / Respawn
             if abs(diff) <= 50.0:
-                 # Anti-Camping Logic:
                  if player_moved:
-                     proximity_reward = diff * 0.5 # Reduced from 2.0 to 0.5
-                 else:
-                     # If not moved, reward is 0 (ignore enemy approach or retreat)
-                     proximity_reward = 0.0
+                     proximity_reward = diff * 0.005 # Heavily nerf approach bonus
         
-        # 5. Update state
         self.prev_min_dist = curr_dist
         self.prev_px = curr_px
         self.prev_py = curr_py
-            
-        # Total reward
-        custom_reward = kill_reward + death_penalty + visual_penalty + exploration_reward + proximity_reward
+
+        # --- Reward Calculation ---
+        kill_reward = 0.0
+        death_penalty = 0.0
+        
+        # Base (Eagle) is always at the bottom-center of the map
+        # Pixel coordinates: approximately X=112, Y=208
+        BASE_X = 112
+        BASE_Y = 208
+        
+        dist_to_base = abs(int(px) - BASE_X) + abs(int(py) - BASE_Y)
+        # Keep near_base flag for meta-kill gating in Dreamer wrapper
+        near_base = dist_to_base <= 80
+        
+        # Linear kill reward: 1st kill = +1, 2nd = +2, ..., 20th = +20
+        # Explicitly requested by user: pure +1, +2, +3 logic, no distance scaling.
+        if 0 <= curr_enemies_left < self.prev_enemies_left and self.prev_enemies_left <= 20:
+            new_kills = self.prev_enemies_left - curr_enemies_left
+            for _ in range(new_kills):
+                # The kill we are currently processing
+                current_kill_num = self.cumulative_kills - new_kills + 1 
+                # Avoid calculating past 20 (or less than 1) just in case
+                if current_kill_num < 1: current_kill_num = 1
+                if current_kill_num > 20: current_kill_num = 20
+                
+                kill_reward += float(current_kill_num)
+                # Ensure the loop counts up properly if new_kills > 1
+                new_kills -= 1 
+        # Death penalty: 1st death = -5, 2nd = -10, 3rd = -20
+        if curr_lives < self.prev_lives:
+            if self.death_count == 1:
+                death_penalty = -5.0
+            elif self.death_count == 2:
+                death_penalty = -10.0
+            else:
+                death_penalty = -20.0
+        
+        # Bonus for level completion
+        level_bonus = 10.0 if info.get('is_success', False) else 0.0
+        
+        # Penalty for base destruction
+        base_penalty = -5.0 if info.get('base_destroyed', False) else 0.0
+        
+        # Fire penalty (cost of bullet)
+        fire_penalty = 0.0
+        if isinstance(action, (list, np.ndarray)) and len(action) >= 2:
+            if action[1] == 1:  # 1 corresponds to 'A' button (fire)
+                fire_penalty = -1.0
+        
+        custom_reward = kill_reward + death_penalty + level_bonus + base_penalty + exploration_reward + proximity_reward + fire_penalty
         
         # Update trackers
-        self.prev_kills = curr_kills
+        self.prev_enemies_left = curr_enemies_left
         self.prev_lives = curr_lives
         
         # Info for debugging
         info['kills'] = self.cumulative_kills
         info['lives'] = curr_lives
-        info['lives'] = curr_lives
         info['exploration'] = len(self.visited_cells)
-        info['proximity_reward'] = proximity_reward
+        info['near_base'] = near_base
+        info['dist_to_base'] = dist_to_base
         
+
         truncated = False
         
         return self._get_obs(), custom_reward, done, truncated, info
-        
-    @property
-    def render_mode(self):
-        return self._custom_render_mode
 
-    def render(self):
+    def render(self, **kwargs):
         # Explicit render handling
         # if self.is_visible: ... removed for headless optimization
              
         # Also return frame if needed by callbacks (so VideoRecorder works if we use it)
-        if self._custom_render_mode == 'rgb_array':
+        mode = kwargs.get('mode', self.render_mode)
+        if mode == 'rgb_array':
              return self.env.render(mode='rgb_array')
 
+    @property
+    def raw_env(self):
+        """Expose the underlying NESEnv for RAM access."""
+        e = self.env
+        while hasattr(e, 'env'):
+            e = e.env
+        return e
+
+    @property
+    def render_mode(self):
+        return getattr(self, "_render_mode", None)
+
+    @render_mode.setter
+    def render_mode(self, value):
+        self._render_mode = value

@@ -193,10 +193,15 @@ def make_env_rank(rank, seed=0):
         return env
     return _init
 
+from stable_baselines3.common.torch_layers import BaseFeaturesExtractor
+import torch.nn as nn
+
+# Removed BalancedCNN since we are using MlpPolicy on flat RAM vectors
+
 def main():
     print(f"Starting training with {RLConfig.N_ENVS} environments...")
     print(f"Game Path: {RLConfig.GAME_PATH}")
-    print(f"Algorithm: PPO (Standard CNN)")
+    print(f"Algorithm: PPO (MlpPolicy with RAM state)")
     print(f"Headless Mode: {RLConfig.HEADLESS}")
 
     # Create the vectorized environment
@@ -207,16 +212,14 @@ def main():
     else:
         vec_env = DummyVecEnv(env_fns)
     
-    # WRAPPER: Frame Stacking (Crucial for Visual RL)
-    # Stacks 4 frames on channel dimension. Input: (84, 84, 1) -> (84, 84, 4)
-    # Even with LSTM, frame stacking is beneficial for immediate motion detection.
-    vec_env = VecFrameStack(vec_env, n_stack=4)
+    # WRAPPER: Frame Stacking removed for RAM state
+    # We pass the raw 44-byte vector directly to the MLP.
+    # vec_env = VecFrameStack(vec_env, n_stack=4)
     
     # Monitor (logs)
     vec_env = VecMonitor(vec_env, "logs/TestMonitor")
 
-    # Simplified Architecture (Standard Atari Nature CNN)
-    # Post-CNN Layers: 512 -> 512 -> 512
+    # MlpPolicy options
     policy_kwargs = dict(
         net_arch=dict(pi=RLConfig.HIDDEN_LAYERS, vf=RLConfig.HIDDEN_LAYERS)
     )
@@ -276,9 +279,9 @@ def main():
         
         print(f"Start Training Run #{curr_run_id}...")
         
-        # Standard PPO with CnnPolicy
+        # Standard PPO with MlpPolicy
         model = PPO(
-            "CnnPolicy",
+            "MlpPolicy",
             vec_env,
             verbose=1,
             learning_rate=RLConfig.LEARNING_RATE,

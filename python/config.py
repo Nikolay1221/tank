@@ -2,36 +2,38 @@ import os
 
 class RLConfig:
     GAME_PATH = os.path.abspath("BattleCity.nes")
-    SKIP_FRAMES = 2
+    SKIP_FRAMES = 20
     
     TOTAL_TIMESTEPS = 240000000  
     N_ENVS = 16
     TRAIN_SINGLE_LEVEL = 1   
+    INVULNERABLE_BASE = True
     
-    # Снижаем LR для стабильности гигантской сети
+    # Стандартный Atari PPO LR (пониженный для стабильности)
     LEARNING_RATE = 1.0e-4 
-    ENTROPY_COEF = 0.01
+    ENTROPY_COEF = 0.1
     GAMMA = 0.99
-    GAE_LAMBDA = 0.90
+    GAE_LAMBDA = 0.95
     CLIP_RANGE = 0.2
     
-    # Target KL new parameter
-    TARGET_KL = 0.03
+    # Target KL new parameter (строгий, чтобы не ломать веса)
+    TARGET_KL = 0.02
     VF_COEF = 0.5
     MAX_GRAD_NORM = 0.5
     
-    # Ультра-частые обновления (как просил)
-    N_STEPS = 512 
-    BATCH_SIZE = 512
-    N_EPOCHS = 7
+    # Широкая архитектура (без узкого горлышка)
+    HIDDEN_LAYERS = [4096, 4096, 4096, 2048]
+    CNN_FEATURES_DIM = 4096
     
-    # Гигантская и глубокая сеть (3 слоя по 2048 нейронов)
-    HIDDEN_LAYERS = [2048,2048,2048]
+    # NES-recommended
+    N_STEPS = 512
+    BATCH_SIZE = 512
+    N_EPOCHS = 4
     
     SAVE_FREQ = 10000
     LOG_INTERVAL = 1000
     
-    HEADLESS = True
+    HEADLESS = False
     RENDER_RANK_0 = False
     
     ADDR_KILLS = [0x73, 0x74, 0x75, 0x76]
